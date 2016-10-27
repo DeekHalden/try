@@ -52,26 +52,26 @@
                 </div>
                 <div class="col-xs-12 progress-bar-container text-muted">
                     <div class="row"><span class="col-xs-3 no-padding pull-left">Budget</span>
-                        <div class="progress col-xs-5 ">
+                        <div class="progress col-xs-5 col-xs-push-1">
                             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                             </div>
                         </div>
-                        <span class="col-xs-3 pull-right">Luxury</span></div>
+                        <span class="col-xs-3 pull-right text-right">Luxury</span></div>
                     <div class="row">
                         <span class="col-xs-3 no-padding pull-left">Relaxed</span>
-                        <div class="progress col-xs-5  ">
+                        <div class="progress col-xs-5  col-xs-push-1">
                             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                             </div>
                         </div>
-                        <span class="col-xs-3 pull-right">Active</span>
+                        <span class="col-xs-3 pull-right text-right">Active</span>
                     </div>
                     <div class="row">
                         <span class="col-xs-3 no-padding pull-left">Desolate</span>
-                        <div class="progress col-xs-5 ">
+                        <div class="progress col-xs-5 col-xs-push-1">
                             <div class="progress-bar progress-bar-success" role="progressbar " aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
                             </div>
                         </div>
-                        <span class="col-xs-3 pull-right">Crowdy</span>
+                        <span class="col-xs-3 pull-right text-right">Crowdy</span>
                     </div>
                 </div>
             </div>
@@ -102,29 +102,23 @@
                 <div id="collapse1" class="panel-collapse collapse in">
                     <div class="panel-body no-padding">
                         <ng-map zoom="10" default-style="true" class="no-boxing">
-                            <marker ng-repeat="location in overview.locations" 
-                                    position="{{location.alt}}" 
-                                    title="{{location.description}}" 
-                                    centered="true" 
-                                    on-click="overview.showDetails(location)" 
-                                    id="{{location.alt}}">
-                                    
+                            <marker ng-repeat="location in overview.locations" position="{{location.alt}}" title="{{location.description}}" centered="true" on-click="overview.showDetails(location)" id="{{location.alt}}">
                             </marker>
                             <info-window id="foo-iw">
                                 <div ng-non-bindable="">
-                                    
-                                    <br/> <p>
+                                    <br/>
+                                    <p>
                                         {{overview.location.alt}}
                                     </p>
                                     <br/> {{overview.location.description}}
                                     <br/>
-                                    
                                 </div>
                             </info-window>
                         </ng-map>
                         <ul id="timeline" class="timeline col-xs-8">
                             <li ng-repeat="location in overview.locations" ng-click="overview.showDetails(e, location)" class="col-xs-10 col-xs-push-3 col-md-push-0" ng-class="{'none':$last}">
-                                <div class="timeline-badge text-center"><p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
+                                <div class="timeline-badge text-center">
+                                    <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
                                 <div class="timeline-panel">
                                     <div class="card col-xs-10 no-padding">
                                         <img class="card-img-top" ng-src="{{location.image}}" alt="{{location.alt}}" width="300px">
