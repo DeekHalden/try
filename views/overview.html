@@ -1,0 +1,223 @@
+<section>
+    <div class="container-fluid">
+        <div class="row image-wrapper">
+            <div class="col-xs-12 col-md-4 image-container">
+                <img src="http://placekitten.com/650/400" alt="" class="img-center main">
+            </div>
+            <div class="col-xs-12 col-md-3 image-container hidd">
+                <img src="http://placekitten.com/500/200" alt="" class="img-center">
+                <img src="http://placekitten.com/500/200" alt="" class="img-center">
+            </div>
+            <div class="col-xs-12 col-md-3 image-container hidd">
+                <img src="http://placekitten.com/500/160" alt="" class="img-center">
+                <img src="http://placekitten.com/500/240" alt="" class="img-center">
+            </div>
+            <div class="col-xs-12 col-md-2 image-container hidd">
+                <img src="http://placekitten.com/350/300" alt="" class="img-center">
+                <img src="http://placekitten.com/350/100" alt="" class="img-center">
+            </div>
+        </div>
+        <div class="socials-group">
+            <span>Share this itinerary: </span>
+            <i class="fa fa-facebook-square" style="font-size: 24px;" aria-hidden="true"></i>
+            <i class="fa fa-twitter-square" style="font-size: 24px;" aria-hidden="true"></i>
+        </div>
+        <div class="heading-group col-md-10 col-md-offset-2 no-padding">
+            <p>ITINERARY</p>
+            <span class="col-xs-12 col-md-8 col-lg-4 no-padding paragraph">Trip to Fabulous Las Vegas</span>
+            <div class="col-md-6 col-lg-4  no-padding">
+                <span>2 DAYS </span>
+                <i class="fa fa-group"></i>
+                <i class="fa fa-spoon"></i>
+                <i class="fa fa-shopping-cart"></i>
+                <i class="fa fa-gitlab"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid no-padding">
+        <div class="row expert col-md-8 col-md-push-2">
+            <div class="col-xs-12 col-lg-6  no-padding">
+                <div class="row no-padding">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img class="img-rounded" src="https://s-media-cache-ak0.pinimg.com/originals/64/6e/5d/646e5d6efe58fd61cdd6f604b8ca3f0e.jpg" alt="Fabolous Las Vegas" height="90px" width="90px">
+                        </div>
+                        <div class="col-xs-8 col-xs-push-1  col-md-push-0 col-md-6 col-md-push-2 col-lg-push-1 expert-window">
+                            <span class="text-muted">Local Expert</span>
+                            <br>
+                            <p>Audrey Tautou</p>
+                            <star-rating ng-model="overview.expert.rating" readonly="rating.isReadonly=true"></star-rating>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 progress-bar-container text-muted">
+                    <div class="row"><span class="col-xs-3 no-padding pull-left">Budget</span>
+                        <div class="progress col-xs-5 ">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                            </div>
+                        </div>
+                        <span class="col-xs-3 pull-right">Luxury</span></div>
+                    <div class="row">
+                        <span class="col-xs-3 no-padding pull-left">Relaxed</span>
+                        <div class="progress col-xs-5  ">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                            </div>
+                        </div>
+                        <span class="col-xs-3 pull-right">Active</span>
+                    </div>
+                    <div class="row">
+                        <span class="col-xs-3 no-padding pull-left">Desolate</span>
+                        <div class="progress col-xs-5 ">
+                            <div class="progress-bar progress-bar-success" role="progressbar " aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                            </div>
+                        </div>
+                        <span class="col-xs-3 pull-right">Crowdy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-6">
+                <div class="row">
+                    <h3 style="color:black ">Overview</h3>
+                    <div>
+                        <p>{{overview.expert.overview[0]}}</p>
+                    </div>
+                    <div id="content" class="collapse">
+                        <p>
+                            {{overview.expert.overview[1]}}
+                        </p>
+                    </div>
+                    <button type="button" class="btn col-xs-offset-5" data-toggle="collapse" data-target="#content"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container_accordion no-padding">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" align="center">
+                       <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" class="accordion-toggle">Day 1</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body no-padding">
+                        <ng-map zoom="10" default-style="true" class="no-boxing">
+                            <marker ng-repeat="location in overview.locations" 
+                                    position="{{location.alt}}" 
+                                    title="{{location.description}}" 
+                                    centered="true" 
+                                    on-click="overview.showDetails(location)" 
+                                    id="{{location.alt}}">
+                                    
+                            </marker>
+                            <info-window id="foo-iw">
+                                <div ng-non-bindable="">
+                                    
+                                    <br/> <p>
+                                        {{overview.location.alt}}
+                                    </p>
+                                    <br/> {{overview.location.description}}
+                                    <br/>
+                                    
+                                </div>
+                            </info-window>
+                        </ng-map>
+                        <ul id="timeline" class="timeline col-xs-8">
+                            <li ng-repeat="location in overview.locations" ng-click="overview.showDetails(e, location)" class="col-xs-10 col-xs-push-3 col-md-push-0" ng-class="{'none':$last}">
+                                <div class="timeline-badge text-center"><p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
+                                <div class="timeline-panel">
+                                    <div class="card col-xs-10 no-padding">
+                                        <img class="card-img-top" ng-src="{{location.image}}" alt="{{location.alt}}" width="300px">
+                                        <div class="card-block">
+                                            <p class="card-text text-muted no-margin">{{location.description|limitTo:50}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" align="center">
+                       <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="accordion-toggle">Day 2</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="timeline">
+                            <li class="col-xs-9 col-xs-offset-3">
+                                <div class="timeline-badge success">10.00 <i class="fa fa-circle-o"></i><span></span></div>
+                                <div class="card">
+                                    <img class="card-img-top img-responsive" src="http://photos.wikimapia.org/p/00/02/98/16/39_big.jpg" alt="Welcome img">
+                                    <div class="card-block">
+                                        <span class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-xs-9 col-xs-offset-3">
+                                <div class="timeline-badge success">15.00<i class="fa fa fa-circle-o"></i></div>
+                                <div class="card">
+                                    <img class="card-img-top img-responsive" src="http://loveopium.ru/content/2013/05/fountains/18big.jpg" alt="Fountain img">
+                                    <div class="card-block">
+                                        <span class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-xs-9 col-xs-offset-3">
+                                <div class="timeline-badge success">15.00<i class="fa fa fa-circle-o"></i></div>
+                                <div class="card">
+                                    <img class="card-img-top img-responsive" src="https://media-cdn.tripadvisor.com/media/photo-s/01/61/a7/d4/gondola-rides-at-the.jpg" alt="Gondola img">
+                                    <div class="card-block">
+                                        <span class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" align="center">
+                       <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="accordion-toggle">Day 3</a>
+                    </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="timeline">
+                                <li class="col-xs-9 col-xs-offset-3">
+                                    <div class="timeline-badge success">10.00 <i class="fa fa-circle-o"></i><span></span></div>
+                                    <div class="card">
+                                        <img class="card-img-top img-responsive" src="http://photos.wikimapia.org/p/00/02/98/16/39_big.jpg" alt="Welcome img">
+                                        <div class="card-block">
+                                            <span class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-xs-9 col-xs-offset-3">
+                                    <div class="timeline-badge success">15.00<i class="fa fa fa-circle-o"></i></div>
+                                    <div class="card">
+                                        <img class="card-img-top img-responsive" src="http://loveopium.ru/content/2013/05/fountains/18big.jpg" alt="Fountain img">
+                                        <div class="card-block">
+                                            <span class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-xs-9 col-xs-offset-3">
+                                    <div class="timeline-badge success">15.00<i class="fa fa fa-circle-o"></i></div>
+                                    <div class="card">
+                                        <img class="card-img-top img-responsive" src="https://media-cdn.tripadvisor.com/media/photo-s/01/61/a7/d4/gondola-rides-at-the.jpg" alt="Gondola img">
+                                        <div class="card-block">
+                                            <span class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
