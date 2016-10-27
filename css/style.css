@@ -108,11 +108,9 @@ section {
   /* map styles */ }
   section .container-fluid {
     position: relative; }
-    section .container-fluid .image-wrapper {
-      min-height: 400px; }
-      section .container-fluid .image-wrapper .image-container .img-center {
-        -webkit-filter: blur(2px);
-        filter: blur(2px); }
+    section .container-fluid .image-wrapper .image-container .img-center {
+      -webkit-filter: blur(2px);
+      filter: blur(2px); }
     section .container-fluid .socials-group {
       position: absolute;
       top: -1.8em;
