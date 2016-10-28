@@ -46,10 +46,17 @@ section {
         border-bottom: 19em solid #A29948;
         z-index: 0; }
     section .timeline li .card {
-      width: 300px; }
+      width: 300px;
+      height: 100%; }
   section .timeline .none .timeline-badge:before {
     border: none; }
 
 @media (max-width: 480px) {
   section .expert-window {
-    padding-left: 2.5em; } }
+    padding-left: 2.5em; }
+  section .timeline li .timeline-badge:before {
+    border-bottom: 18em solid #A29948;
+    z-index: 0; }
+  section .timeline li .card {
+    width: 250px;
+    height: 100%; } }

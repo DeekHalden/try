@@ -14,10 +14,8 @@ nav {
 section {
     overflow-x: hidden;
     .image-wrapper {
-        
         .main {
             width: 100%;
-            
         }
     }
     .socials-group {
@@ -45,7 +43,7 @@ section {
     }
     .timeline {
         li {
-            float:right;
+            float: right;
             padding-bottom: 1em;
             .timeline-badge {
                 position: absolute;
@@ -64,8 +62,8 @@ section {
                 }
             }
             .card {
-                
-                width:300px;
+                width: 300px;
+                height: 100%;
             }
         }
         .none .timeline-badge:before {
@@ -77,27 +75,36 @@ section {
 @media (max-width: 640px) {
     section {
         .image-wrapper {
-            
-            .main {
-                
-            }
+            .main {}
         }
-        
     }
 }
 
 @media (max-width: 800px) {
-    section {
-        
-    }
+    section {}
 }
 
-
-
 @media (max-width: 480px) {
-     section {
-        .expert-window{
-            padding-left:2.5em;
+    section {
+        .expert-window {
+            padding-left: 2.5em;
+        }
+        .timeline {
+            li {
+                .timeline-badge {
+                    &:before {
+                        border-bottom: 18em solid #A29948;
+                        z-index: 0;
+                    }
+                }
+                .card {
+                    width: 250px;
+                    height: 100%;
+                }
+            }
         }
     }
 }
+
+
+

@@ -35,7 +35,8 @@ body {
     position: absolute;
     vertical-align: middle;
     top: calc(50% - 10px);
-    left: calc(50% - 42.5px); }
+    left: calc(50% - 60.5px);
+    border-radius: 0; }
 
 section .container-fluid {
   padding: 0;
