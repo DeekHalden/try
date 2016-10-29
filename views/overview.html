@@ -103,9 +103,9 @@
                     <div class="panel-body no-padding">
                         <!-- map -->
                         <!-- <button ng-click="overview.showInfo('iw1')">Get window</button> -->
-                        <ul id="timeline" class="timeline col-xs-8 col-md-12">
-                            <li class="col-xs-12 col-md-5">
-                                <gm-map class="col-md-12" 
+                        <ul id="timeline" class="timeline col-xs-12 col-md-12">
+                            <li class="col-xs-12 col-md-5 no-padding">
+                                <gm-map class="" 
                                         ng-show="overview.mapId == day.day" 
                                         gm-address="{address:'{{day.locations[0].alt}}' }" 
                                         options="{zoom: 4}" id="{{'map'+$index}}">

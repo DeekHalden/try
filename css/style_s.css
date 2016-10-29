@@ -29,15 +29,14 @@ section {
     section .expert-window span {
       font-size: 18px; }
   section .timeline li {
-    float: right;
+    float: right !important;
     padding-bottom: 1em; }
-    section .timeline li .timeline-badge {
-      position: absolute;
-      left: -25%;
-      top: 100px;
+    section .timeline li .timeline-badge, section .timeline li .badge-right, section .timeline li .badge-left {
+      left: -25% !important;
+      right: auto;
       background-color: #F6F5E7;
       z-index: 1; }
-      section .timeline li .timeline-badge:before {
+      section .timeline li .timeline-badge:before, section .timeline li .badge-right:before, section .timeline li .badge-left:before {
         content: '';
         left: 49%;
         top: 95%;

@@ -42,13 +42,14 @@ section {
         }
     }
     .timeline {
+
         li {
-            float: right;
+            float: right !important;
             padding-bottom: 1em;
-            .timeline-badge {
-                position: absolute;
-                left: -25%;
-                top: 100px;
+            .timeline-badge, .badge-right, .badge-left {
+                
+                left: -25% !important;
+                right:auto;
                 background-color: #F6F5E7;
                 z-index: 1;
                 &:before {
