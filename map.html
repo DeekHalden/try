@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+  <style>gm-map {display: block; width: 100%; height: 300px;}</style>
+    <script src="scripts/vendor/angular.min.js"></script>
+    <script src="scripts/vendor/angular-google-maps-native.min.js"></script>
+  <script>var app = angular.module('MyApp', ['GoogleMapsNative']); </script>
+</head>
+<body ng-init="showMarker=true; data={}">
+<label><input type="checkbox" ng-model="showMarker"> Show the marker</label>
+
+<gm-map options="{center: [55, -122], zoom: 4, mapTypeId: google.maps.MapTypeId.ROADMAP}">
+  <gm-marker
+    ng-show="showMarker" position="[55, -122]" options="{draggable: true}"
+    on-dragend="data.position = marker.getPosition()"
+  ></gm-marker>
+</gm-map>
+
+<div ng-if="data.position">
+  Drag on ({{data.position.lat()}}, {{data.position.lng()}})
+</div>
+
+</body>
+</html>
+ -->
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+<head>
+    <style>
+    gm-map {
+        display: block;
+        width: 100%;
+        height: 300px;
+    }
+    </style>
+    <script src="scripts/vendor/angular.min.js"></script>
+    <script src="scripts/vendor/angular-google-maps-native.min.js"></script>
+    <script>
+    var app = angular.module('MyApp', ['GoogleMapsNative']);
+    </script>
+</head>
+
+<body ng-init="showInfo=true; data={}">
+    <label>
+        <input type="checkbox" ng-model="showInfo"> Show the infowindows</label>
+        <input type="checkbox" ng-model="showInf"> Show the infowindows</label>
+    <gm-map options="{center: [40.780, -73.967], zoom: 9}">
+        <gm-infowindow ng-if="showInfo" options="{content: 'Hello World from map!', position:  [40.73685214795608,-74.3060302734375]}"></gm-infowindow>
+        <gm-marker position="[40.780, -73.967]">
+            <gm-infowindow ng-show="showInf" options="{content: 'Hello World from marker!'}"></gm-infowindow>
+        </gm-marker>
+    </gm-map>
+    <div ng-if="data.last">Last closed: {{data.last}}</div>
+</body>
+
+</html>
