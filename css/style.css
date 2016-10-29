@@ -206,26 +206,27 @@ section {
     content: "\e114"; }
   section #collapse1 {
     height: auto; }
-  section #map {
-    width: 100%;
-    height: 20em;
-    border-radius: .5em; }
-  section a[href^="http://maps.google.com/maps"], section a[href^="https://maps.google.com/maps"] {
-    display: none !important; }
-  section .gmnoprint a,
-  section .gmnoprint span {
-    display: none; }
-  section .gm-style-cc {
-    display: none; }
-  section .gmnoprint div {
-    background: none !important; }
+  section gm-map {
+    height: 28em;
+    position: relative;
+    display: block;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 1em; }
   section .timeline {
     position: relative;
     padding: 20px 0 20px;
     list-style: none; }
     section .timeline li {
+      padding-bottom: 2em;
       position: relative; }
+      section .timeline li .badge-left {
+        left: -5em; }
+      section .timeline li .badge-right {
+        right: -5em; }
       section .timeline li .timeline-badge {
+        position: absolute;
+        top: 100px;
         color: #A29948;
         font-weight: 700; }
         section .timeline li .timeline-badge:before {

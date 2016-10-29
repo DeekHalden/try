@@ -40,7 +40,10 @@
                 <div class="row no-padding">
                     <div class="row">
                         <div class="col-xs-2">
-                            <img class="img-rounded" src="https://s-media-cache-ak0.pinimg.com/originals/64/6e/5d/646e5d6efe58fd61cdd6f604b8ca3f0e.jpg" alt="Fabolous Las Vegas" height="90px" width="90px">
+                            <img class="img-rounded" 
+                                 src="https://s-media-cache-ak0.pinimg.com/originals/64/6e/5d/646e5d6efe58fd61cdd6f604b8ca3f0e.jpg" 
+                                 alt="Fabolous Las Vegas" 
+                                 height="90px" width="90px">
                         </div>
                         <div class="col-xs-10 col-xs-push-1  col-md-push-0 col-md-6 col-md-push-2 col-lg-push-1 expert-window">
                             <span class="text-muted">Local Expert</span>
@@ -53,7 +56,12 @@
                 <div class="col-xs-12 progress-bar-container text-muted" ng-repeat="data in overview.expert.badges">
                     <div class="row"><span class="col-xs-3 no-padding pull-left">{{data.first}}</span>
                         <div class="progress col-xs-5 col-xs-push-1">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{data.value}}" aria-valuemin="0" aria-valuemax="100" ng-style="{'width':data.value+'%'}">
+                            <div class="progress-bar progress-bar-success" 
+                                 role="progressbar" 
+                                 aria-valuenow="{{data.value}}" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100" 
+                                 ng-style="{'width':data.value+'%'}">
                             </div>
                         </div>
                         <span class="col-xs-3 pull-right text-right">{{data.second}}</span>
@@ -71,41 +79,53 @@
                             {{overview.expert.overview[1]}}
                         </p>
                     </div>
-                    <button type="button" class="btn col-xs-offset-5" data-toggle="collapse" data-target="#content"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                    <button type="button" 
+                            class="btn col-xs-offset-5" 
+                            data-toggle="collapse" 
+                            data-target="#content"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid container_accordion no-padding">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
+            <div class="panel panel-default" ng-repeat="day in overview.days">
                 <div class="panel-heading">
                     <h4 class="panel-title" align="center">
-                       <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" class="accordion-toggle" ng-click="overview.initMap('map0')">Day 1</a>
+                       <a data-toggle="collapse"
+                          data-parent="#accordion" 
+                          data-target="{{'#collapse'+$index}}" 
+                          class="accordion-toggle" 
+                          ng-click="overview.showMap(day.day)">{{"Day " + day.day}}</a>
                     </h4>
                 </div>
-                <div id="collapse1" class="panel-collapse collapse in">
+                <div id="{{'collapse'+$index}}" class="panel-collapse collapse">
                     <div class="panel-body no-padding">
-                        <ng-map zoom="10" default-style="true" class="no-boxing" id="map0">
-                            <marker ng-repeat="location in overview.days[0].locations" position="{{location.alt}}" title="{{location.description}}"  ng-click="overview.showDetails(location, overview.days[0])" id="{{location.alt}}">
-                            </marker>
-                            <info-window id="foo-iw0">
-                                <div ng-non-bindable="">
-                                    <br/>
-                                    <p>
-                                        {{overview.location.alt}}
-                                    </p>
-                                    <br/> {{overview.location.description}}
-                                    <br/>
-                                </div>
-                            </info-window>
-                        </ng-map>
-                        <ul id="timeline" class="timeline col-xs-8">
-                            <li ng-repeat="location in overview.days[0].locations" ng-click="overview.showDetails(e, location, overview.days[0])" class="col-xs-11 col-xs-push-3 col-md-push-0" ng-class="{'none':$last}">
-                                <div class="timeline-badge text-center">
+                        <!-- map -->
+                        <!-- <button ng-click="overview.showInfo('iw1')">Get window</button> -->
+                        <ul id="timeline" class="timeline col-xs-8 col-md-12">
+                            <li class="col-xs-12 col-md-5">
+                                <gm-map class="col-md-12" 
+                                        ng-show="overview.mapId == day.day" 
+                                        gm-address="{address:'{{day.locations[0].alt}}' }" 
+                                        options="{zoom: 4}" id="{{'map'+$index}}">
+                                    <gm-marker position="{{location.coords}}" 
+                                               ng-repeat="location in  day.locations">
+                                        <gm-infowindow id="{{'iw'+location.index}}" 
+                                                       ng-show="overview.showId == day.day +''+ location.index" 
+                                                       options="{content: '{{location.description}}', position:  [36.0455, -115.1022]}"></gm-infowindow>
+                                    </gm-marker>
+                                </gm-map>
+                            </li>
+                            <li ng-repeat="location in day.locations" 
+                                class="col-xs-11 col-xs-push-3 col-md-5 col-md-push-0" 
+                                ng-class="{'none':$last ,'pull-right':$even, 'pull-left': $odd}" 
+                                ng-click="overview.showInfo(day.day, location.index)">
+                                <div class="timeline-badge text-center" 
+                                     ng-class="{'badge-left':$even, 'badge-right': $odd}">
                                     <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
                                 <div class="timeline-panel">
-                                    <div class="card col-xs-10 no-padding">
+                                    <div class="card col-xs-10 col-md-12 no-padding">
                                         <img class="card-img-top" ng-src="{{location.image}}" alt="{{location.alt}}" width="300px">
                                         <div class="card-block">
                                             <p class="card-text text-muted no-margin">{{location.description|limitTo:50}}</p>
@@ -117,84 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title" align="center">
-                       <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" class="accordion-toggle" ng-click="overview.initMap('map1')">Day 2</a>
-                    </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body no-padding">
-                        <ng-map zoom="8" default-style="true" class="no-boxing" id="map1">
-                            <marker ng-repeat="location in overview.days[1].locations" position="{{location.alt}}" title="{{location.description}}" on-click="overview.showDetails(location, overview.days[1])" id="{{location.alt}}">
-                            </marker>
-                            <info-window id="foo-iw1">
-                                <div ng-non-bindable="">
-                                    <br/>
-                                    <p>
-                                        {{overview.location.alt}}
-                                    </p>
-                                    <br/> {{overview.location.description}}
-                                    <br/>
-                                </div>
-                            </info-window>
-                        </ng-map>
-                        <ul id="timeline" class="timeline col-xs-8">
-                            <li ng-repeat="location in overview.days[1].locations" ng-click="overview.showDetails(e, location, overview.days[1])" class="col-xs-11 col-xs-push-3 col-md-push-0" ng-class="{'none':$last}">
-                                <div class="timeline-badge text-center">
-                                    <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
-                                <div class="timeline-panel">
-                                    <div class="card col-xs-10 no-padding">
-                                        <img class="card-img-top" ng-src="{{location.image}}" alt="{{location.alt}}" width="300px">
-                                        <div class="card-block">
-                                            <p class="card-text text-muted no-margin">{{location.description|limitTo:50}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title" align="center">
-                       <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" class="accordion-toggle" ng-click="overview.initMap('map2')">Day 3</a>
-                    </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body no-padding">
-                        <ng-map zoom="4" default-style="true" class="no-boxing" id="map2">
-                            <marker ng-repeat="location in overview.days[2].locations" position="{{location.alt}}" title="{{location.description}}" on-click="overview.showDetails(location, overview.days[2])" id="{{location.alt}}">
-                            </marker>
-                            <info-window id="foo-iw2">
-                                <div ng-non-bindable="">
-                                    <br/>
-                                    <p>
-                                        {{overview.location.alt}}
-                                    </p>
-                                    <br/> {{overview.location.description}}
-                                    <br/>
-                                </div>
-                            </info-window>
-                        </ng-map>
-                        <ul id="timeline" class="timeline col-xs-8">
-                            <li ng-repeat="location in overview.days[2].locations" ng-click="overview.showDetails(e, location, overview.days[2])" class="col-xs-11 col-xs-push-3 col-md-push-0" ng-class="{'none':$last}">
-                                <div class="timeline-badge text-center">
-                                    <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
-                                <div class="timeline-panel">
-                                    <div class="card col-xs-10 no-padding">
-                                        <img class="card-img-top" ng-src="{{location.image}}" alt="{{location.alt}}" width="300px">
-                                        <div class="card-block">
-                                            <p class="card-text text-muted no-margin">{{location.description|limitTo:50}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>

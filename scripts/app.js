@@ -5,7 +5,7 @@
  */
 (function() {
         'use strict';
-        angular.module('test', ['ui.router','ngMap'])
+        angular.module('test', ['ui.router','GoogleMapsNative'])
             .config(function($urlRouterProvider, $stateProvider) {
             	
                 $urlRouterProvider.otherwise('/');

@@ -41,9 +41,8 @@ body {
         position: absolute;
         vertical-align: middle;
         top: calc(50% - 10px);
-        left:calc(50% - 60.5px);
-        border-radius:0;
-
+        left: calc(50% - 60.5px);
+        border-radius: 0;
     }
 }
 
@@ -144,7 +143,6 @@ section {
     .container-fluid {
         position: relative;
         .image-wrapper {
-            
             .image-container .img-center {
                 -webkit-filter: blur(2px);
                 filter: blur(2px);
@@ -277,47 +275,39 @@ section {
     #collapse1 {
         height: auto;
     }
-    #map {
-        width: 100%;
-        height: 20em;
-        border-radius: .5em;
-    }
-    a {
-        &[href^="http://maps.google.com/maps"],
-        &[href^="https://maps.google.com/maps"] {
-            display: none !important;
-        }
-    }
-    .gmnoprint {
-        a,
-        span {
-            display: none;
-        }
-    }
-    .gm-style-cc {
-        display: none;
-    }
-    .gmnoprint div {
-        background: none !important;
+    gm-map {
+        height: 28em;
+        position: relative;
+        display: block;
+        padding: 1em;
+        box-sizing: border-box;
+        border-radius:1em;
     }
     .timeline {
         position: relative;
         padding: 20px 0 20px;
         list-style: none;
         li {
+          padding-bottom:2em;
             position: relative;
+            .badge-left {
+                left: -5em;
+            }
+            .badge-right {
+                right: -5em;
+            }
             .timeline-badge {
+                position: absolute;
+                top: 100px;
                 color: #A29948;
                 font-weight: 700;
                 &:before {
-                    content:'';
+                    content: '';
                     position: absolute;
                     width: 1px;
-
                 }
             }
             .card {
-
                 background-color: transparent;
                 border-radius: 5px;
                 box-shadow: 0px 0px 4px rgba(220, 219, 203, 1);
