@@ -282,6 +282,9 @@ section {
         padding: 1em;
         box-sizing: border-box;
         border-radius:1em;
+        gm-infowindow {
+          background-color:#F6F5E7 !important;
+        }
     }
     .timeline {
         position: relative;

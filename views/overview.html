@@ -1,5 +1,5 @@
 <section>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row image-wrapper">
             <div class="col-xs-12 col-md-4 image-container">
                 <img src="http://placekitten.com/650/400" alt="" class="img-center main">
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container-fluid container_accordion no-padding">
         <div class="panel-group" id="accordion">
             <div class="panel panel-default" ng-repeat="day in overview.days">
@@ -112,13 +112,13 @@
                                     <gm-marker position="{{location.coords}}" 
                                                ng-repeat="location in  day.locations">
                                         <gm-infowindow id="{{'iw'+location.index}}" 
-                                                       ng-show="overview.showId == day.day +''+ location.index" 
-                                                       options="{content: '{{location.description}}', position:  [36.0455, -115.1022]}"></gm-infowindow>
+                                                       ng-if="overview.showId == day.day +''+ location.index" 
+                                                       options="{content: overview.locationMessage, position:  [36.0455, -115.1022]}"></gm-infowindow>
                                     </gm-marker>
                                 </gm-map>
                             </li>
                             <li ng-repeat="location in day.locations" 
-                                class="col-xs-11 col-xs-push-3 col-md-5 col-md-push-0" 
+                                class="col-xs-11 col-xs-push-3 col-md-5 col-md-push-0 no-padding" 
                                 ng-class="{'none':$last ,'pull-right':$even, 'pull-left': $odd}" 
                                 ng-click="overview.showInfo(day.day, location.index)">
                                 <div class="timeline-badge text-center" 

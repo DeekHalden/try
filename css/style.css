@@ -213,6 +213,8 @@ section {
     padding: 1em;
     box-sizing: border-box;
     border-radius: 1em; }
+    section gm-map gm-infowindow {
+      background-color: #F6F5E7 !important; }
   section .timeline {
     position: relative;
     padding: 20px 0 20px;
