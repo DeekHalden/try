@@ -1,5 +1,5 @@
 <section>
-    <!-- <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row image-wrapper">
             <div class="col-xs-12 col-md-4 image-container">
                 <img src="http://placekitten.com/650/400" alt="" class="img-center main">
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <div class="container-fluid container_accordion no-padding">
         <div class="panel-group" id="accordion">
             <div class="panel panel-default" ng-repeat="day in overview.days">
@@ -113,19 +113,38 @@
                                                ng-repeat="location in  day.locations">
                                         <gm-infowindow id="{{'iw'+location.index}}" 
                                                        ng-if="overview.showId == day.day +''+ location.index" 
-                                                       options="{content: overview.locationMessage, position:  [36.0455, -115.1022]}"></gm-infowindow>
+                                                       options="{content: overview.locationMessage}"></gm-infowindow>
                                     </gm-marker>
                                 </gm-map>
                             </li>
+                            <li class="col-xs-12 col-md-6">
+                                <form name="myForm" class="form">
+                                      <label>
+                                        <input type="radio" ng-model="overview.venueType" value="cafe">
+                                        Cafes
+                                      </label>
+                                      <label>
+                                        <input type="radio" ng-model="overview.venueType" value="bar">
+                                        Bars
+                                      </label>
+                                      <label>
+                                        <input type="radio" ng-model="overview.venueType" value="shop">
+                                        Shops
+                                      </label>
+                                      
+                                    </form>    
+                            </li>
+                            
                             <li ng-repeat="location in day.locations" 
                                 class="col-xs-11 col-xs-push-3 col-md-5 col-md-push-0 no-padding" 
                                 ng-class="{'none':$last ,'pull-right':$even, 'pull-left': $odd}" 
-                                ng-click="overview.showInfo(day.day, location.index)">
+                                >
                                 <div class="timeline-badge text-center" 
                                      ng-class="{'badge-left':$even, 'badge-right': $odd}">
                                     <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
                                 <div class="timeline-panel">
-                                    <div class="card col-xs-10 col-md-12 no-padding">
+                                    
+                                    <div class="card col-xs-10 col-md-12 no-padding" ng-click="overview.showInfo(day.day, location.index, overview.venueType)">
                                         <img class="card-img-top" ng-src="{{location.image}}" alt="{{location.alt}}" width="300px">
                                         <div class="card-block">
                                             <p class="card-text text-muted no-margin">{{location.description|limitTo:50}}</p>

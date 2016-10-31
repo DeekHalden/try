@@ -219,6 +219,10 @@ section {
     position: relative;
     padding: 20px 0 20px;
     list-style: none; }
+    section .timeline .form {
+      display: flex;
+      -webkit-justify-content: space-around;
+      justify-content: space-around; }
     section .timeline li {
       padding-bottom: 2em;
       position: relative; }

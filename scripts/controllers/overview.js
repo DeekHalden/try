@@ -156,53 +156,54 @@
             }]
         }]
 
-        
 
-        function getRandomInRange(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+        vm.locationMessage = '';
+        vm.venueType = 'cafe';
 
-        function showInfo(day, location) {
-
-            return $http.get("https://api.foursquare.com/v2/venues/search?ll=" + vm.days[day - 1].locations[location - 1].coords[0] + "%2C" + vm.days[day - 1].locations[location - 1].coords[1] + "&client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20151222&query=bar")
+        function showInfo(day, location, venueType) {
+            vm.showId = 0;
+            console.log(venueType);
+            return $http.get("https://api.foursquare.com/v2/venues/search?ll=" + vm.days[day - 1].locations[location - 1].coords[0] + "%2C" + vm.days[day - 1].locations[location - 1].coords[1] + "&client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20151222&query=" + venueType + "")
                 .then(function(data) {
                     
-                    console.log(data.data.response.venues.length);
+                    // each new request retrieve info about  random  venue in list of venues which are near seacrch location
+                    if (data.data.response.venues.length>0) {
+                        var venues  = data.data.response.venues;
+                        var number = getRandomInRange(0, venues.length - 1)
+                        var id = venues[number].id;
 
-                    var number = getRandomInRange(0,data.data.response.venues.length-1)
+                        return $http.get("https://api.foursquare.com/v2/venues/" + id + "?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20151222")
+                            .then(function(data) {
+                                // console.log(data);
+                                var venue = data.data.response.venue;
 
-                    var id = data.data.response.venues[number].id;
+                                if (venue.tips.groups[0].items[0]) {
+                                    vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>' + venue.tips.groups[0].items[0].text + '</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more from Foursquare.</p>';
 
+                                } else {
+                                    vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>No Tips about this location.</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more form Foursquare.</p>'
+                                }
+                                // console.log(vm.data);
+                                vm.showId = day + '' + location;
 
-                    return $http.get("https://api.foursquare.com/v2/venues/" + id + "?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20151222")
-                        .then(function(data) {
-                            // console.log(data);
-                            var venue = data.data.response.venue;
+                            });
+                        
+                    } else {
+                        vm.locationMessage = '<p>No '+ venueType+'\'s found. </p>';
+                        vm.showId = day + '' + location;
 
-                            if (venue.tips.groups[0].items[0]) {
-                                vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>' + venue.tips.groups[0].items[0].text + '</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more from Foursquare.</p>';
+                    }
 
-                            } else {
-                                vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>No detailed information avialable about this location.</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more form Foursquare.</p>'
-                            }
-
-
-                            // console.log(vm.data);
-                            vm.showId = day + '' + location;
-
-                        });
                 })
         }
-
-
-        vm.log = function(data) {
-
-        }
-
 
         function showMap(index) {
 
             vm.mapId = index;
+        }
+
+        function getRandomInRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
 
