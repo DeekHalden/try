@@ -61,7 +61,7 @@
             locations: [{
                 time: '10.00',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'http://photos.wikimapia.org/p/00/02/98/16/39_big.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Welcome to Fabulous Las Vegas',
                 index: 1,
                 coords: [
@@ -71,7 +71,7 @@
             }, {
                 time: '15.00',
                 description: 'Fluidity convenience store nodality systema dolphin garage footage courier into hotdog 3D-printed plastic bomb car saturation point. Meta-nano-saturation point stimulate papier-mache rifle math-katana advert into. Pistol faded nodal point render-farm bridge math-savant table jeans 3D-printed. Wristwatch tube vehicle otaku assault order-flow pre. Motion decay computer assault pre-jeans artisanal sub-orbital shrine sprawl refrigerator systemic. Girl assassin Legba face forwards concrete dome alcohol youtube industrial grade city gang-space rain stimulate chrome. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'http://loveopium.ru/content/2013/05/fountains/18big.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Ceasers palace',
                 index: 2,
                 coords: [
@@ -80,7 +80,7 @@
             }, {
                 time: '16.00',
                 description: 'Marketing face forwards convenience store 8-bit alcohol corrupted saturation point military-grade jeans tiger-team sub-orbital. Corporation cartel garage RAF uplink disposable car BASE jump otaku hacker systema convenience store camera neon youtube. Towards assault tank-traps physical man denim city chrome wristwatch. Digital corrupted faded apophenia footage denim futurity city tiger-team Tokyo narrative tanto tank-traps claymore mine. Digital singularity construct-space warehouse assault motion DIY rifle pistol wristwatch. Refrigerator urban fetishism pistol into towards car numinous corporation DIY j-pop computer saturation point sign apophenia kanji. Free-market dome pistol-ware ablative Shibuya rifle neural order-flow Chiba physical refrigerator. Wristwatch saturation point courier BASE jump construct singularity pistol car carbon modem savant tattoo shanty town shrine systema skyscraper rain. Free-market refrigerator sunglasses shrine geodesic marketing tower dolphin. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'https://media-cdn.tripadvisor.com/media/photo-s/01/61/a7/d4/gondola-rides-at-the.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: '3355 S Las Vegas Blvd',
                 index: 3,
                 coords: [
@@ -93,7 +93,7 @@
             locations: [{
                 time: '10.00',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'http://photos.wikimapia.org/p/00/02/98/16/39_big.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Kiev,Dynamo stadium',
                 index: 1,
                 coords: [
@@ -103,7 +103,7 @@
             }, {
                 time: '15.00',
                 description: 'Fluidity convenience store nodality systema dolphin garage footage courier into hotdog 3D-printed plastic bomb car saturation point. Meta-nano-saturation point stimulate papier-mache rifle math-katana advert into. Pistol faded nodal point render-farm bridge math-savant table jeans 3D-printed. Wristwatch tube vehicle otaku assault order-flow pre. Motion decay computer assault pre-jeans artisanal sub-orbital shrine sprawl refrigerator systemic. Girl assassin Legba face forwards concrete dome alcohol youtube industrial grade city gang-space rain stimulate chrome. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'http://loveopium.ru/content/2013/05/fountains/18big.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Dnipro, Arena',
                 index: 2,
                 coords: [
@@ -113,7 +113,7 @@
             }, {
                 time: '16.00',
                 description: 'Marketing face forwards convenience store 8-bit alcohol corrupted saturation point military-grade jeans tiger-team sub-orbital. Corporation cartel garage RAF uplink disposable car BASE jump otaku hacker systema convenience store camera neon youtube. Towards assault tank-traps physical man denim city chrome wristwatch. Digital corrupted faded apophenia footage denim futurity city tiger-team Tokyo narrative tanto tank-traps claymore mine. Digital singularity construct-space warehouse assault motion DIY rifle pistol wristwatch. Refrigerator urban fetishism pistol into towards car numinous corporation DIY j-pop computer saturation point sign apophenia kanji. Free-market dome pistol-ware ablative Shibuya rifle neural order-flow Chiba physical refrigerator. Wristwatch saturation point courier BASE jump construct singularity pistol car carbon modem savant tattoo shanty town shrine systema skyscraper rain. Free-market refrigerator sunglasses shrine geodesic marketing tower dolphin. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'https://media-cdn.tripadvisor.com/media/photo-s/01/61/a7/d4/gondola-rides-at-the.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Аквапарк',
                 index: 3,
                 coords: [
@@ -127,7 +127,7 @@
             locations: [{
                 time: '10.00',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'http://photos.wikimapia.org/p/00/02/98/16/39_big.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Stambul, Stadium',
                 index: 1,
                 coords: [
@@ -137,7 +137,7 @@
             }, {
                 time: '15.00',
                 description: 'Fluidity convenience store nodality systema dolphin garage footage courier into hotdog 3D-printed plastic bomb car saturation point. Meta-nano-saturation point stimulate papier-mache rifle math-katana advert into. Pistol faded nodal point render-farm bridge math-savant table jeans 3D-printed. Wristwatch tube vehicle otaku assault order-flow pre. Motion decay computer assault pre-jeans artisanal sub-orbital shrine sprawl refrigerator systemic. Girl assassin Legba face forwards concrete dome alcohol youtube industrial grade city gang-space rain stimulate chrome. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'http://loveopium.ru/content/2013/05/fountains/18big.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Sofia University',
                 index: 2,
                 coords: [
@@ -147,7 +147,7 @@
             }, {
                 time: '16.00',
                 description: 'Marketing face forwards convenience store 8-bit alcohol corrupted saturation point military-grade jeans tiger-team sub-orbital. Corporation cartel garage RAF uplink disposable car BASE jump otaku hacker systema convenience store camera neon youtube. Towards assault tank-traps physical man denim city chrome wristwatch. Digital corrupted faded apophenia footage denim futurity city tiger-team Tokyo narrative tanto tank-traps claymore mine. Digital singularity construct-space warehouse assault motion DIY rifle pistol wristwatch. Refrigerator urban fetishism pistol into towards car numinous corporation DIY j-pop computer saturation point sign apophenia kanji. Free-market dome pistol-ware ablative Shibuya rifle neural order-flow Chiba physical refrigerator. Wristwatch saturation point courier BASE jump construct singularity pistol car carbon modem savant tattoo shanty town shrine systema skyscraper rain. Free-market refrigerator sunglasses shrine geodesic marketing tower dolphin. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-                image: 'https://media-cdn.tripadvisor.com/media/photo-s/01/61/a7/d4/gondola-rides-at-the.jpg',
+                photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Lviv, Just Lviv It',
                 index: 3,
                 coords: [
@@ -158,10 +158,10 @@
         }]
 
 
-        vm.locationMessage = '';
+        
 
 
-        function showInfo(day, location, venueType) {
+        function showInfo(day, location) {
             vm.showId = 0;
 
             var locs = vm.days[day - 1].locations[location - 1];
@@ -179,30 +179,30 @@
                         var id = venues[0].id;
 
                         return httpGetVenueById(id)
-                            .then(function(data) {
-                                // console.log(data);
-                                var venue = data.data.response.venue;
-
-                                console.log(venue.bestPhoto.prefix + venue.bestPhoto.width + 'x' + venue.bestPhoto.height + venue.bestPhoto.suffix);
-
-                                if (venue.tips.groups[0].items[0]) {
-                                    vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>' + venue.tips.groups[0].items[0].text + '</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more from Foursquare.</p>';
-
-                                } else {
-                                    vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>No Tips about this location.</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more form Foursquare.</p>'
-                                }
-                                // console.log(vm.data);
-                                vm.showId = day + '' + location;
-
-                            });
 
                     } else {
-                        vm.locationMessage = '<p>No ' + venueType + '\'s found. </p>';
+                        vm.locationMessage = '<p>No information found. </p>';
                         vm.showId = day + '' + location;
 
                     }
 
                 })
+                .then(function(data) {
+                    // console.log(data);
+                    var venue = data.data.response.venue;
+
+                    console.log(venue.bestPhoto.prefix + venue.bestPhoto.width + 'x' + venue.bestPhoto.height + venue.bestPhoto.suffix);
+
+                    if (venue.tips.groups[0].items[0]) {
+                        vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>' + venue.tips.groups[0].items[0].text + '</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more from Foursquare.</p>';
+
+                    } else {
+                        vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>No Tips about this location.</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more form Foursquare.</p>'
+                    }
+                    // console.log(vm.data);
+                    vm.showId = day + '' + location;
+
+                });
         }
 
         vm.photos = [];
@@ -226,33 +226,24 @@
                     })
                     .then(function(data) {
                         var venue = data.data.response.venue;
-                        var photo = venue.bestPhoto.prefix + venue.bestPhoto.width + 'x' + venue.bestPhoto.height + venue.bestPhoto.suffix;
+                        var photo = venue.bestPhoto.prefix + '1000x1000' + venue.bestPhoto.suffix;
                         loc.photo = photo;
+                        loc.description = venue.name  ;
+
                     });
             })
         };
-        // vm.photos = [].push(vm.photo);
-        // console.log(vm.photos);
-
 
         function showMap(index) {
 
             var locs = vm.days[index - 1].locations;
-
-            getPhotos(locs);
-
-            vm.mapId = index;
+                getPhotos(locs);
+                vm.mapId = index;
         };
-
-
-
-
 
         function getRandomInRange(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-
-
     }
 
 

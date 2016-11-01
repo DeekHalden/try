@@ -31,31 +31,56 @@ section {
   section .timeline li {
     float: right !important;
     padding-bottom: 1em; }
-    section .timeline li .timeline-badge, section .timeline li .badge-right, section .timeline li .badge-left {
+    section .timeline li .timeline-badge,
+    section .timeline li .badge-right,
+    section .timeline li .badge-left {
       left: -25% !important;
       right: auto;
       background-color: #F6F5E7;
       z-index: 1; }
-      section .timeline li .timeline-badge:before, section .timeline li .badge-right:before, section .timeline li .badge-left:before {
+      section .timeline li .timeline-badge:before,
+      section .timeline li .badge-right:before,
+      section .timeline li .badge-left:before {
         content: '';
         left: 49%;
         top: 95%;
-        position: absolute;
         width: 1px;
-        border-bottom: 19em solid #A29948;
+        border-bottom: 30em solid #A29948;
+        z-index: 0; }
+      section .timeline li .timeline-badge:after,
+      section .timeline li .badge-right:after,
+      section .timeline li .badge-left:after {
+        left: 49%;
+        bottom: 95%;
+        width: 1px;
+        border-top: 15em solid #A29948;
         z-index: 0; }
     section .timeline li .card {
-      width: 300px;
+      float: right;
       height: 100%; }
-  section .timeline .none .timeline-badge:before {
+      section .timeline li .card img {
+        width: 100%; }
+  section .timeline .none-before .timeline-badge:after {
+    border: none; }
+  section .timeline .none-after .timeline-badge:before {
     border: none; }
 
+@media (max-width: 800px) {
+  section .timeline li .timeline-badge {
+    left: -30% !important; }
+    section .timeline li .timeline-badge:before {
+      border-bottom: 32em solid #A29948; }
+  section .card {
+    width: 400px; } }
+
+@media (max-width: 640px) {
+  section .timeline li .timeline-badge {
+    left: -30% !important; }
+    section .timeline li .timeline-badge:before {
+      border-bottom: 28em solid #A29948; }
+  section .card {
+    width: 100%; } }
+
 @media (max-width: 480px) {
-  section .expert-window {
-    padding-left: 2.5em; }
   section .timeline li .timeline-badge:before {
-    border-bottom: 18em solid #A29948;
-    z-index: 0; }
-  section .timeline li .card {
-    width: 250px;
-    height: 100%; } }
+    border-bottom: 18em solid #A29948; } }

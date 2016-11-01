@@ -297,7 +297,7 @@ section {
         }
         li {
           padding-bottom:2em;
-            position: relative;
+            
             .badge-left {
                 left: -5em;
             }
@@ -314,11 +314,17 @@ section {
                     position: absolute;
                     width: 1px;
                 }
+                 &:after {
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                }
             }
             .card {
                 background-color: transparent;
                 border-radius: 5px;
                 box-shadow: 0px 0px 4px rgba(220, 219, 203, 1);
+                
                 .card-block {
                     background-color: #fff;
                     padding: 0 5px;
@@ -332,7 +338,7 @@ section {
                     margin: 0;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
-                    width: 100%;
+                    width:100%;
                 }
             }
         }

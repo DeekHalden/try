@@ -224,8 +224,7 @@ section {
       -webkit-justify-content: space-around;
       justify-content: space-around; }
     section .timeline li {
-      padding-bottom: 2em;
-      position: relative; }
+      padding-bottom: 2em; }
       section .timeline li .badge-left {
         left: -5em; }
       section .timeline li .badge-right {
@@ -236,6 +235,10 @@ section {
         color: #A29948;
         font-weight: 700; }
         section .timeline li .timeline-badge:before {
+          content: '';
+          position: absolute;
+          width: 1px; }
+        section .timeline li .timeline-badge:after {
           content: '';
           position: absolute;
           width: 1px; }

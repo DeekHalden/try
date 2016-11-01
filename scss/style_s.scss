@@ -42,70 +42,106 @@ section {
         }
     }
     .timeline {
-
         li {
             float: right !important;
             padding-bottom: 1em;
-            .timeline-badge, .badge-right, .badge-left {
-                
+            .timeline-badge,
+            .badge-right,
+            .badge-left {
                 left: -25% !important;
-                right:auto;
+                right: auto;
                 background-color: #F6F5E7;
                 z-index: 1;
                 &:before {
                     content: '';
                     left: 49%;
                     top: 95%;
-                    position: absolute;
                     width: 1px;
-                    border-bottom: 19em solid #A29948;
+                    border-bottom: 30em solid #A29948;
+                    z-index: 0;
+                }
+                &:after {
+                    left: 49%;
+                    bottom: 95%;
+                    width: 1px;
+                    border-top: 15em solid #A29948;
                     z-index: 0;
                 }
             }
             .card {
-                width: 300px;
+                float: right;
                 height: 100%;
+                
+                img {
+                    width:100%;
+                }
             }
         }
-        .none .timeline-badge:before {
+        .none-before .timeline-badge:after {
+            border: none;
+        }
+        .none-after .timeline-badge:before {
             border: none;
         }
     }
 }
+
+@media (max-width: 800px) {
+    section {
+        .timeline {
+            li {
+                .timeline-badge {
+                    left: -30% !important;
+                    &:before {
+                        border-bottom: 32em solid #A29948;
+                    }
+                }
+            }
+        }
+        .card {
+            width: 400px;
+        }
+    }
+}
+
+
 
 @media (max-width: 640px) {
     section {
         .image-wrapper {
             .main {}
         }
+        .timeline {
+            li {
+                .timeline-badge {
+                    left: -30% !important;
+                    &:before {
+                        border-bottom: 28em solid #A29948;
+                    }
+                }
+            }
+        }
+        .card {
+            width: 100%;
+        }
     }
-}
-
-@media (max-width: 800px) {
-    section {}
 }
 
 @media (max-width: 480px) {
     section {
-        .expert-window {
-            padding-left: 2.5em;
+        .image-wrapper {
+            
         }
         .timeline {
             li {
                 .timeline-badge {
+                    
                     &:before {
                         border-bottom: 18em solid #A29948;
-                        z-index: 0;
                     }
-                }
-                .card {
-                    width: 250px;
-                    height: 100%;
                 }
             }
         }
+        
     }
 }
-
-
-
