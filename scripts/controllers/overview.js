@@ -221,14 +221,14 @@
                 return httpGetId(loc)
                     .then(function(data) {
                         var id = data.data.response.venues[0].id;
-                        return httpGetVenueById(id)
-                            .then(function(data) {
-                                var venue = data.data.response.venue;
-                                var photo = venue.bestPhoto.prefix + venue.bestPhoto.width + 'x' + venue.bestPhoto.height + venue.bestPhoto.suffix;
-                                vm.photos.push(photo);
-                                console.log(vm.photos);
-                            })
+                        return httpGetVenueById(id);
+
                     })
+                    .then(function(data) {
+                        var venue = data.data.response.venue;
+                        var photo = venue.bestPhoto.prefix + venue.bestPhoto.width + 'x' + venue.bestPhoto.height + venue.bestPhoto.suffix;
+                        loc.photo = photo;
+                    });
             })
         };
         // vm.photos = [].push(vm.photo);

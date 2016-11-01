@@ -145,8 +145,8 @@
                                     <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
                                 <div class="timeline-panel">
                                     
-                                    <div class="card col-xs-10 col-md-12 no-padding" ng-click="overview.showInfo(day.day, location.index, overview.venueType)" ng-repeat="photo in overview.photos">
-                                        <img class="card-img-top"  ng-src="{{photo}}" alt="{{location.alt}}" width="300px">
+                                    <div class="card col-xs-10 col-md-12 no-padding" ng-click="overview.showInfo(day.day, location.index, overview.venueType)">
+                                        <img class="card-img-top"  ng-src="{{location.photo}}" alt="{{location.alt}}" width="300px" height="250px">
                                         <div class="card-block">
                                             <p class="card-text text-muted no-margin">{{location.description|limitTo:50}}</p>
                                         </div>
