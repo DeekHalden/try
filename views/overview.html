@@ -117,7 +117,8 @@
                                     </gm-marker>
                                 </gm-map>
                             </li>
-                            <li class="col-xs-12 col-md-6">
+                            <!-- feature to show random venue from list of venues based on users input -->
+                           <!--  <li class="col-xs-12 col-md-6">
                                 <form name="myForm" class="form">
                                       <label>
                                         <input type="radio" ng-model="overview.venueType" value="cafe">
@@ -133,7 +134,7 @@
                                       </label>
                                       
                                     </form>    
-                            </li>
+                            </li> -->
                             
                             <li ng-repeat="location in day.locations" 
                                 class="col-xs-11 col-xs-push-3 col-md-5 col-md-push-0 no-padding" 
@@ -144,8 +145,8 @@
                                     <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i><span></span></div>
                                 <div class="timeline-panel">
                                     
-                                    <div class="card col-xs-10 col-md-12 no-padding" ng-click="overview.showInfo(day.day, location.index, overview.venueType)">
-                                        <img class="card-img-top" ng-src="{{location.image}}" alt="{{location.alt}}" width="300px">
+                                    <div class="card col-xs-10 col-md-12 no-padding" ng-click="overview.showInfo(day.day, location.index, overview.venueType)" ng-repeat="photo in overview.photos">
+                                        <img class="card-img-top"  ng-src="{{photo}}" alt="{{location.alt}}" width="300px">
                                         <div class="card-block">
                                             <p class="card-text text-muted no-margin">{{location.description|limitTo:50}}</p>
                                         </div>
