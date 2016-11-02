@@ -15,12 +15,13 @@
 
     function OverviewFunction($state, $http, $scope, $timeout) {
         // local vars
+
+
         var clientID = "BHTTXP2QZ1D3A1LDT1JJHOQH4Y3VGXP24SHMIPHOWTLO0DVA";
         var clientSecret = "GUQA4EATBIAT4GEP5GIJJVZPCKLB3AOEI0PKT4C4DUTMCCKQ";
 
         // global vars
         var vm = this;
-
         vm.showMap = showMap;
         vm.showInfo = showInfo;
 

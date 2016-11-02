@@ -21,6 +21,7 @@ html {
     min-height: 100%;
     /* make sure it is at least as tall as the viewport */
     position: relative;
+    font-family: sans;
 }
 
 body {
@@ -36,7 +37,6 @@ body {
     right: 0;
     overflow: hidden;
     z-index: -1;
-    /* Remove this line if it's not going to be a background! */
     .btn {
         position: absolute;
         vertical-align: middle;
@@ -139,6 +139,7 @@ section .container-fluid {
 }
 
 section {
+    margin-top: 1em;
     /* map styles */
     .container-fluid {
         position: relative;
@@ -218,6 +219,17 @@ section {
                 border-radius: 5px;
             }
         }
+        .btn {
+            background-color: transparent;
+            color: #2158D5;
+            font-size: 24px;
+            &:focus {
+                outline: none;
+            }
+            &:active {
+                box-shadow: none;
+            }
+        }
     }
     .container-fluid.container_accordion {
         border-radius: 0;
@@ -232,6 +244,7 @@ section {
             background-color: #F6F5E7;
         }
         .panel-heading {
+            position: relative;
             background-color: #F6F5E7;
             border-top: 2px dashed #E4E3D0;
             border-bottom: 2px dashed #E4E3D0;
@@ -249,98 +262,144 @@ section {
                 right: 10px;
                 border-radius: 100px / 10px;
             }
-        }
-    }
-    .panel-heading {
-        a {
-            font-weight: 800;
-            &:hover {
-                text-decoration: none;
-            }
-        }
-        .accordion-toggle {
-            &:after {
-                font-family: 'Glyphicons Halflings';
-                content: "\e113";
-                float: right;
-                color: grey;
-                border: 1px solid #FCF3B7;
-                border-radius: 50%;
-            }
-            &.collapsed:after {
-                content: "\e114";
-            }
-        }
-    }
-    #collapse1 {
-        height: auto;
-    }
-    gm-map {
-        height: 28em;
-        position: relative;
-        display: block;
-        padding: 1em;
-        box-sizing: border-box;
-        border-radius:1em;
-        gm-infowindow {
-          background-color:#F6F5E7 !important;
-        }
-    }
-    .timeline {
-        position: relative;
-        padding: 20px 0 20px;
-        list-style: none;
-        .form {
-          display:flex;
-          -webkit-justify-content:space-around;
-          justify-content:space-around;
-        }
-        li {
-          padding-bottom:2em;
-            
-            .badge-left {
-                left: -5em;
-            }
-            .badge-right {
-                right: -5em;
-            }
-            .timeline-badge {
-                position: absolute;
-                top: 100px;
-                color: #A29948;
-                font-weight: 700;
-                &:before {
-                    content: '';
-                    position: absolute;
-                    width: 1px;
+            a {
+                font-weight: 800;
+                &:hover {
+                    text-decoration: none;
                 }
-                 &:after {
-                    content: '';
+                i {
                     position: absolute;
-                    width: 1px;
-                }
-            }
-            .card {
-                background-color: transparent;
-                border-radius: 5px;
-                box-shadow: 0px 0px 4px rgba(220, 219, 203, 1);
-                
-                .card-block {
+                    right: 10px;
+                    top: calc(50% - 16px);
+                    border: 2px solid #FEDE06;
                     background-color: #fff;
-                    padding: 0 5px;
-                    border-bottom-left-radius: 5px;
-                    border-bottom-right-radius: 5px;
-                    p {
-                        padding: 1em;
+                    border-radius: 50%;
+                    font-size: 32px;
+                    height: 32px;
+                    width: 32px;
+                    &:before {
+                        position: absolute;
+                        right: 3px;
+                        top: -1.5px;
                     }
                 }
-                img {
-                    margin: 0;
-                    border-top-left-radius: 5px;
-                    border-top-right-radius: 5px;
-                    width:100%;
+            }
+        }
+        gm-map {
+            height: 30em;
+            position: relative;
+            display: block;
+            padding: 1em;
+            box-sizing: border-box;
+            border-radius: 1em;
+            .gmnoprint,
+            .gm-style-cc,
+            img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"] {
+                display: none;
+            }
+            gm-infowindow {
+                background-color: #F6F5E7 !important;
+            }
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0 20px;
+            list-style: none;
+            .form {
+                display: flex;
+                -webkit-justify-content: space-around;
+                justify-content: space-around;
+            }
+            li {
+                padding-bottom: 2em;
+                .badge-left {
+                    left: -5em;
+                }
+                .badge-right {
+                    right: -5em;
+                }
+                .timeline-badge {
+                    position: absolute;
+                    top: 100px;
+                    color: #A29948;
+                    font-weight: 700;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 1px;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 1px;
+                    }
+                }
+                .card {
+                    background-color: transparent;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 4px rgba(220, 219, 203, 1);
+                    .card-block {
+                        background-color: #fff;
+                        padding: 0 5px;
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        p {
+                            padding: 1em;
+                        }
+                    }
+                    img {
+                        margin: 0;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        width: 100%;
+                    }
                 }
             }
+        }
+    }
+}
+
+.row {
+    color: #3D380A;
+    letter-spacing: 1px;
+    h3 {
+        font-size: 32px;
+        font-weight: 600;
+    }
+    p {
+        font-size: 20px;
+    }
+}
+
+footer {
+    min-height: 1px;
+    background-color: #453C25;
+    ul {
+        padding-top: 1em !important;
+        a {
+            color: #fff;
+        }
+    }
+    .logo-div {
+        height: 27px;
+        .helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        img {
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    .socials-group {
+        padding: 1em 1em 0 0;
+        i {
+            font-size: 18px !important;
+            color: white;
+        }
+        span {
+            color: #796B46;
         }
     }
 }

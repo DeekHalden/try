@@ -17,14 +17,15 @@
                         views: {
                             'header': {
                                 templateUrl: 'views/partials/header.html',
-                                controller: 'HeaderController'
+                                controller: 'NavController'
                             },
                             'content': {
                                 templateUrl: 'views/partials/home.html',
                                 controller: 'HomeController as home'
                             },
                             'footer': {
-                                templateUrl: 'views/partials/footer.html'
+                                templateUrl: 'views/partials/footer.html',
+                                controller: 'NavController'
                             }
                         }
 

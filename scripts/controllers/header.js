@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('test')
-        .controller('HeaderController', HeaderController);
+        .controller('NavController', HeaderController);
     HeaderController.$inject = ['$state','$scope'];
 
     function HeaderController($state,$scope) {
