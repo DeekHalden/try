@@ -22,20 +22,26 @@
             <i class="fa fa-facebook-square" style="font-size: 24px;" aria-hidden="true"></i>
             <i class="fa fa-twitter-square" style="font-size: 24px;" aria-hidden="true"></i>
         </div>
-        <div class="heading-group col-md-10 col-md-offset-2 no-padding">
-            <p>ITINERARY</p>
-            <span class="col-xs-12 col-md-8 col-lg-4 no-padding paragraph">Trip to Fabulous Las Vegas</span>
-            <div class="col-md-6 col-lg-4  no-padding">
-                <span>2 DAYS </span>
-                <i class="fa fa-group"></i>
-                <i class="fa fa-spoon"></i>
-                <i class="fa fa-shopping-cart"></i>
-                <i class="fa fa-gitlab"></i>
+        <div class="container">
+        <div class="row">
+            <div class="heading-group center-block">
+                <p>ITINERARY</p>
+                <div class="no-padding">
+                    <span class="no-padding paragraph col-xs-12">Trip to Fabulous Las Vegas</span>
+                    <span>2 DAYS </span>
+                    <i class="fa fa-group"><span ng-show="overview.includeDesktopTemplate"> family</span></i>
+                    <i class="fa fa-spoon"><span ng-show="overview.includeDesktopTemplate"> foodie</span></i>
+                    <i class="fa fa-shopping-cart"><span ng-show="overview.includeDesktopTemplate"> shopping</span></i>
+                    <i class="fa fa-paw"><span ng-show="overview.includeDesktopTemplate"> pet friendly</span></i>
+                </div>
             </div>
         </div>
+            
+            
+        </div>
     </div>
-    <div class="container-fluid no-padding">
-        <div class="row expert col-md-8 col-md-push-2">
+    <div class="container no-padding">
+        <div class="row expert col-md-12">
             <div class="col-xs-12 col-lg-6  no-padding">
                 <div class="row no-padding">
                     <div class="row">
@@ -101,7 +107,7 @@
                             <div class="panel-body no-padding">
                                 <!-- map -->
                                 <!-- <button ng-click="overview.showInfo('iw1')">Get window</button> -->
-                                <ul id="timeline" class="timeline col-xs-12 col-md-12">
+                                <ul id="timeline" class="timeline col-xs-12">
                                     <li class="col-xs-12 col-md-5 map">
                                         <gm-map class="" ng-show="overview.mapId == day.day" gm-address="{address:'{{day.locations[0].alt}}' }" options="{zoom: 4}" id="{{'map'+$index}}">
                                             <gm-marker position="{{location.coords}}" ng-repeat="location in  day.locations" on-click="overview.showInfo(day.day, location.index)">

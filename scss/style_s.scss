@@ -1,161 +1,124 @@
 .hidd {
-    display: none
+  display: none;
 }
 
 nav {
-    .navbar-toggle {
-        margin-right: 4px;
-    }
-    li {
-        padding-left: 10px;
-    }
+  .navbar-toggle {
+    margin-right: 4px;
+  }
+  li {
+    padding-left: 10px;
+  }
 }
 
 section {
-    overflow-x: hidden;
-    .image-wrapper {
-        .main {
-            width: 100%;
-        }
+  overflow-x: hidden;
+  .image-wrapper .main {
+    width: 100%;
+  }
+  .socials-group {
+    top: 1em !important;
+    font-size: 18px !important;
+    color: #FFFFFF;
+    i {
+      transform: scale(1) !important;
     }
-    .socials-group {
-        top: 1em !important;
-        font-size: 18px !important;
-        color: #FFFFFF;
-        i {
-            transform: scale(1)!important;
-        }
+  }
+  .heading-group {
+    position: absolute;
+    font-size: 14px !important;
+    left: 1.5em;
+    .paragraph {
+      font-weight: 400;
+      font-size: 24px;
     }
-    .heading-group {
-        position: absolute;
-        font-size: 14px !important;
-        left: 1em;
-        .paragraph {
-            font-weight: 400;
-            font-size: 24px;
-        }
+  }
+  .expert-window {
+    padding-bottom: 2em;
+    span {
+      font-size: 18px;
     }
-    .expert-window {
-        padding-bottom: 2em;
-        span {
-            font-size: 18px;
+  }
+  .container_accordion .panel-group .timeline {
+    li {
+      float: right !important;
+      padding-bottom: 1em;
+      gm-map {
+        height: 20em;
+      }
+      .timeline-badge, .badge-right, .badge-left {
+        left: -25% !important;
+        right: auto;
+        background-color: #F6F5E7;
+        z-index: 1;
+      }
+      .timeline-badge:before, .badge-right:before, .badge-left:before {
+        content: '';
+        left: 49%;
+        top: 95%;
+        width: 1px;
+        border-bottom: 30em solid #A29948;
+        z-index: 0;
+      }
+      .timeline-badge:after, .badge-right:after, .badge-left:after {
+        left: 49%;
+        bottom: 95%;
+        width: 1px;
+        border-top: 15em solid #A29948;
+        z-index: 0;
+      }
+      .card {
+        float: right;
+        height: 100%;
+        img {
+          width: 100%;
         }
-    }
-    .container_accordion {
-        .panel-group {
-            .timeline {
-                li {
-                    gm-map {
-                        height: 20em;
-                    }
-                    float: right !important;
-                    padding-bottom: 1em;
-                    .timeline-badge,
-                    .badge-right,
-                    .badge-left {
-                        left: -25% !important;
-                        right: auto;
-                        background-color: #F6F5E7;
-                        z-index: 1;
-                        &:before {
-                            content: '';
-                            left: 49%;
-                            top: 95%;
-                            width: 1px;
-                            border-bottom: 30em solid #A29948;
-                            z-index: 0;
-                        }
-                        &:after {
-                            left: 49%;
-                            bottom: 95%;
-                            width: 1px;
-                            border-top: 15em solid #A29948;
-                            z-index: 0;
-                        }
-                    }
-                    .card {
-                        float: right;
-                        height: 100%;
-                        img {
-                            width: 100%;
-                        }
-                        .card-block {
-                            height:5em;
-                        }
-                    }
-                }
-                .none-before .timeline-badge:after {
-                    border: none;
-                }
-                .none-after .timeline-badge:before {
-                    border: none;
-                }
-            }
+        .card-block {
+          height: 5em;
         }
+      }
     }
+    .none-before .timeline-badge:after, .none-after .timeline-badge:before {
+      border: none;
+    }
+  }
 }
 
 @media (max-width: 800px) {
-    section {
-        .container_accordion {
-            .panel-group {
-                .timeline {
-                    li {
-                        .timeline-badge {
-                            left: -30% !important;
-                            &:before {
-                                border-bottom: 32em solid #A29948;
-                            }
-                        }
-                    }
-                }
-                .card {
-                    width: 400px;
-                }
-            }
-        }
+  section .container_accordion .panel-group {
+    .timeline li .timeline-badge {
+      left: -30% !important;
+      &:before {
+        border-bottom: 32em solid #A29948;
+      }
     }
+    .card {
+      width: 400px;
+    }
+  }
 }
 
 @media (max-width: 640px) {
-    section {
-        .container_accordion {
-            .panel-group {
-                .timeline {
-                    li {
-                        .timeline-badge {
-                            left: -30% !important;
-                            &:before {
-                                border-bottom: 24em solid #A29948;
-                            }
-                        }
-                    }
-                }
-                .card {
-                    width: 100%;
-                }
-            }
-        }
+  section .container_accordion .panel-group {
+    .timeline li .timeline-badge {
+      left: -30% !important;
+      &:before {
+        border-bottom: 24em solid #A29948;
+      }
     }
+    .card {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 480px) {
-    section {
-        .container_accordion {
-            .panel-group {
-                .timeline {
-                    li {
-                        .timeline-badge {
-                            &:before {
-                                border-bottom: 15em solid #A29948;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .expert-window {
-            padding-left: 3em;
-        }
+  section {
+    .container_accordion .panel-group .timeline li .timeline-badge:before {
+      border-bottom: 15em solid #A29948;
     }
+    .expert-window {
+      padding-left: 3em;
+    }
+  }
 }

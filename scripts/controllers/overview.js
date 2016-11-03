@@ -81,7 +81,7 @@
 
             }, {
                 time: '15.00',
-                description: 'Fluidity convenience store nodality systema dolphin garage footage courier into hotdog 3D-printed plastic bomb car saturation point. Meta-nano-saturation point stimulate papier-mache rifle math-katana advert into. Pistol faded nodal point render-farm bridge math-savant table jeans 3D-printed. Wristwatch tube vehicle otaku assault order-flow pre. Motion decay computer assault pre-jeans artisanal sub-orbital shrine sprawl refrigerator systemic. Girl assassin Legba face forwards concrete dome alcohol youtube industrial grade city gang-space rain stimulate chrome. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
                 photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Ceasers palace',
                 index: 2,
@@ -90,7 +90,7 @@
                 ]
             }, {
                 time: '16.00',
-                description: 'Marketing face forwards convenience store 8-bit alcohol corrupted saturation point military-grade jeans tiger-team sub-orbital. Corporation cartel garage RAF uplink disposable car BASE jump otaku hacker systema convenience store camera neon youtube. Towards assault tank-traps physical man denim city chrome wristwatch. Digital corrupted faded apophenia footage denim futurity city tiger-team Tokyo narrative tanto tank-traps claymore mine. Digital singularity construct-space warehouse assault motion DIY rifle pistol wristwatch. Refrigerator urban fetishism pistol into towards car numinous corporation DIY j-pop computer saturation point sign apophenia kanji. Free-market dome pistol-ware ablative Shibuya rifle neural order-flow Chiba physical refrigerator. Wristwatch saturation point courier BASE jump construct singularity pistol car carbon modem savant tattoo shanty town shrine systema skyscraper rain. Free-market refrigerator sunglasses shrine geodesic marketing tower dolphin. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
                 photo: 'http://placehold.it/1/F6F5E7',
                 alt: '3355 S Las Vegas Blvd',
                 index: 3,
@@ -113,7 +113,7 @@
                 ]
             }, {
                 time: '15.00',
-                description: 'Fluidity convenience store nodality systema dolphin garage footage courier into hotdog 3D-printed plastic bomb car saturation point. Meta-nano-saturation point stimulate papier-mache rifle math-katana advert into. Pistol faded nodal point render-farm bridge math-savant table jeans 3D-printed. Wristwatch tube vehicle otaku assault order-flow pre. Motion decay computer assault pre-jeans artisanal sub-orbital shrine sprawl refrigerator systemic. Girl assassin Legba face forwards concrete dome alcohol youtube industrial grade city gang-space rain stimulate chrome. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
                 photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Dnipro, Arena',
                 index: 2,
@@ -123,7 +123,7 @@
                 ]
             }, {
                 time: '16.00',
-                description: 'Marketing face forwards convenience store 8-bit alcohol corrupted saturation point military-grade jeans tiger-team sub-orbital. Corporation cartel garage RAF uplink disposable car BASE jump otaku hacker systema convenience store camera neon youtube. Towards assault tank-traps physical man denim city chrome wristwatch. Digital corrupted faded apophenia footage denim futurity city tiger-team Tokyo narrative tanto tank-traps claymore mine. Digital singularity construct-space warehouse assault motion DIY rifle pistol wristwatch. Refrigerator urban fetishism pistol into towards car numinous corporation DIY j-pop computer saturation point sign apophenia kanji. Free-market dome pistol-ware ablative Shibuya rifle neural order-flow Chiba physical refrigerator. Wristwatch saturation point courier BASE jump construct singularity pistol car carbon modem savant tattoo shanty town shrine systema skyscraper rain. Free-market refrigerator sunglasses shrine geodesic marketing tower dolphin. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
                 photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Аквапарк',
                 index: 3,
@@ -147,7 +147,7 @@
 
             }, {
                 time: '15.00',
-                description: 'Fluidity convenience store nodality systema dolphin garage footage courier into hotdog 3D-printed plastic bomb car saturation point. Meta-nano-saturation point stimulate papier-mache rifle math-katana advert into. Pistol faded nodal point render-farm bridge math-savant table jeans 3D-printed. Wristwatch tube vehicle otaku assault order-flow pre. Motion decay computer assault pre-jeans artisanal sub-orbital shrine sprawl refrigerator systemic. Girl assassin Legba face forwards concrete dome alcohol youtube industrial grade city gang-space rain stimulate chrome. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
                 photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Sofia University',
                 index: 2,
@@ -157,7 +157,7 @@
                 ]
             }, {
                 time: '16.00',
-                description: 'Marketing face forwards convenience store 8-bit alcohol corrupted saturation point military-grade jeans tiger-team sub-orbital. Corporation cartel garage RAF uplink disposable car BASE jump otaku hacker systema convenience store camera neon youtube. Towards assault tank-traps physical man denim city chrome wristwatch. Digital corrupted faded apophenia footage denim futurity city tiger-team Tokyo narrative tanto tank-traps claymore mine. Digital singularity construct-space warehouse assault motion DIY rifle pistol wristwatch. Refrigerator urban fetishism pistol into towards car numinous corporation DIY j-pop computer saturation point sign apophenia kanji. Free-market dome pistol-ware ablative Shibuya rifle neural order-flow Chiba physical refrigerator. Wristwatch saturation point courier BASE jump construct singularity pistol car carbon modem savant tattoo shanty town shrine systema skyscraper rain. Free-market refrigerator sunglasses shrine geodesic marketing tower dolphin. Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
                 photo: 'http://placehold.it/1/F6F5E7',
                 alt: 'Lviv, Just Lviv It',
                 index: 3,

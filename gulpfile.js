@@ -1,6 +1,20 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
+var uncss 		= require('gulp-uncss');
+var concat = require('gulp-concat');
+var nano = require('gulp-cssnano');
+
+gulp.task('uncss', function () {
+    return gulp.src('scss/**/*.scss')
+        .pipe(sass())
+        
+        .pipe(uncss({
+            html: ['views/**/*.html','bower_components/**/*.js', 'scripts/**/*.js']
+        }))
+        .pipe(nano())
+        .pipe(gulp.dest('./out'));
+});
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {

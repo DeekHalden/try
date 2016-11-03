@@ -4,12 +4,10 @@
 .no-padding {
   padding: 0; }
 
-.no-margin,
-.navbar-default {
+.no-margin, .navbar-default {
   margin: 0; }
 
-.no-boxing, section .container_accordion .panel-group .panel + .panel,
-.row {
+.no-boxing, section .container_accordion .panel-group .panel + .panel, .row {
   padding: 0;
   margin: 0; }
 
@@ -137,8 +135,7 @@ section {
       color: #3D380A;
       font-size: 18px;
       margin-bottom: 0; }
-    section .expert .clear-rating,
-    section .expert .caption {
+    section .expert .clear-rating, section .expert .caption {
       display: none !important; }
     section .expert .star-rating {
       margin: 0;
@@ -185,9 +182,12 @@ section {
     border: 1px solid #E4E3D2; }
     section .container_accordion .panel-group .panel {
       border: 0; }
+      section .container_accordion .panel-group .panel + .panel {
+        margin-top: 0; }
     section .container_accordion .panel-group .panel-default {
-      padding-top: 1em;
       background-color: inherit; }
+      section .container_accordion .panel-group .panel-default:first-of-type {
+        padding-top: 1em; }
       section .container_accordion .panel-group .panel-default:last-of-type {
         padding-bottom: 1em; }
     section .container_accordion .panel-group .panel-heading, section .container_accordion .panel-group .timeline li .card .shadow {
@@ -206,34 +206,34 @@ section {
       border-bottom: 2px dashed #E4E3D0;
       box-shadow: 1px 2px 2px lightgray;
       width: 100%; }
-      section .container_accordion .panel-group .panel-heading:after, section .container_accordion .panel-group .timeline li .card .shadow:after {
-        content: "";
-        position: absolute;
-        z-index: -2;
-        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
-        top: 0;
-        bottom: 0;
-        left: 10px;
-        right: 10px;
-        border-radius: 100px / 10px; }
-      section .container_accordion .panel-group .panel-heading a, section .container_accordion .panel-group .timeline li .card .shadow a {
-        font-weight: 800; }
-        section .container_accordion .panel-group .panel-heading a:hover, section .container_accordion .panel-group .timeline li .card .shadow a:hover {
-          text-decoration: none; }
-        section .container_accordion .panel-group .panel-heading a i, section .container_accordion .panel-group .timeline li .card .shadow a i {
-          position: absolute;
-          right: 10px;
-          top: calc(50% - 16px);
-          border: 2px solid #FFDF06;
-          background-color: #fff;
-          border-radius: 50%;
-          font-size: 32px;
-          height: 32px;
-          width: 32px; }
-          section .container_accordion .panel-group .panel-heading a i:before, section .container_accordion .panel-group .timeline li .card .shadow a i:before {
-            position: absolute;
-            right: 3px;
-            top: -1.5px; }
+    section .container_accordion .panel-group .panel-heading:after, section .container_accordion .panel-group .timeline li .card .shadow:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+      top: 0;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      border-radius: 100px / 10px; }
+    section .container_accordion .panel-group .panel-heading a, section .container_accordion .panel-group .timeline li .card .shadow a {
+      font-weight: 800; }
+    section .container_accordion .panel-group .panel-heading a:hover, section .container_accordion .panel-group .timeline li .card .shadow a:hover {
+      text-decoration: none; }
+    section .container_accordion .panel-group .panel-heading a i, section .container_accordion .panel-group .timeline li .card .shadow a i {
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 16px);
+      border: 2px solid #FFDF06;
+      background-color: #fff;
+      border-radius: 50%;
+      font-size: 32px;
+      height: 32px;
+      width: 32px; }
+    section .container_accordion .panel-group .panel-heading a i:before, section .container_accordion .panel-group .timeline li .card .shadow a i:before {
+      position: absolute;
+      right: 3px;
+      top: -1.5px; }
     section .container_accordion .panel-group gm-map {
       height: 30em;
       position: relative;
@@ -241,9 +241,7 @@ section {
       padding: 1em;
       box-sizing: border-box;
       border-radius: 1em; }
-      section .container_accordion .panel-group gm-map .gmnoprint,
-      section .container_accordion .panel-group gm-map .gm-style-cc,
-      section .container_accordion .panel-group gm-map img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"] {
+      section .container_accordion .panel-group gm-map .gmnoprint, section .container_accordion .panel-group gm-map .gm-style-cc, section .container_accordion .panel-group gm-map img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"] {
         display: none; }
       section .container_accordion .panel-group gm-map gm-infowindow {
         background-color: #F6F5E7 !important; }
@@ -266,11 +264,7 @@ section {
           top: 100px;
           color: #A29948;
           font-weight: 700; }
-          section .container_accordion .panel-group .timeline li .timeline-badge:before {
-            content: '';
-            position: absolute;
-            width: 1px; }
-          section .container_accordion .panel-group .timeline li .timeline-badge:after {
+          section .container_accordion .panel-group .timeline li .timeline-badge:before, section .container_accordion .panel-group .timeline li .timeline-badge:after {
             content: '';
             position: absolute;
             width: 1px; }
@@ -286,8 +280,8 @@ section {
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
             /*==================================================
- * Drop shadow effect with box-shadow
- * ===============================================*/ }
+* Drop shadow effect with box-shadow
+* ===============================================*/ }
             section .container_accordion .panel-group .timeline li .card .card-block p {
               padding: 1em; }
           section .container_accordion .panel-group .timeline li .card img {
@@ -301,8 +295,10 @@ section {
             color: #E1614D; }
             section .container_accordion .panel-group .timeline li .card .shadow h3 {
               height: 1.5em;
+              padding-top: 6px;
               padding-left: 1em;
-              font-weight: 100; }
+              font-weight: 100;
+              font-size: 16px; }
   section .browse-itinerary {
     padding-bottom: 1em;
     color: #3D380A;
@@ -352,22 +348,7 @@ section {
     border-radius: 5px;
     border: none;
     margin: 1em; }
-  .carousel section ::-webkit-input-placeholder {
-    color: #4A4024;
-    text-align: center;
-    font-weight: 100;
-    padding: 1em; }
-  .carousel section :-moz-placeholder {
-    color: #4A4024;
-    text-align: center;
-    font-weight: 100;
-    padding: 1em; }
-  .carousel section ::-moz-placeholder {
-    color: #4A4024;
-    text-align: center;
-    font-weight: 100;
-    padding: 1em; }
-  .carousel section :-ms-input-placeholder {
+  .carousel section ::-webkit-input-placeholder, .carousel section :-moz-placeholder, .carousel section ::-moz-placeholder, .carousel section :-ms-input-placeholder {
     color: #4A4024;
     text-align: center;
     font-weight: 100;
