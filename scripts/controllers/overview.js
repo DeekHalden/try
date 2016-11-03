@@ -11,9 +11,9 @@
     angular.module('test')
         .controller('OverviewController', OverviewFunction);
 
-    OverviewFunction.$inject = ['$state', '$http', '$scope', '$timeout'];
+    OverviewFunction.$inject = ['$state', '$http','$window'];
 
-    function OverviewFunction($state, $http, $scope, $timeout) {
+    function OverviewFunction($state, $http, $window) {
         // local vars
 
 
@@ -24,6 +24,16 @@
         var vm = this;
         vm.showMap = showMap;
         vm.showInfo = showInfo;
+
+        vm.includeDesktopTemplate = false;
+        vm.includeMobileTemplate = false;
+        var screenWidth = $window.innerWidth;
+
+        if (screenWidth <= 991) {
+            vm.includeMobileTemplate = true;
+        } else {
+            vm.includeDesktopTemplate = true;
+        }
 
 
 
@@ -40,16 +50,16 @@
                 'Sprawl wonton soup rebar tanto BASE jump gang tower fetishism marketing geodesic human engine towards futurity numinous. Network table tiger-team garage neon soul-delay denim paranoid sentient Legba. Sub-orbital engine tattoo dome cardboard vinyl decay courier skyscraper tanto narrative otaku long-chain hydrocarbons gang apophenia claymore mine neural. Futurity monofilament tank-traps beef noodles stimulate tiger-team faded sunglasses drugs courier 8-bit apophenia 3D-printed.'
             ],
             badges: [{
-                first: 'Budget',
-                second: 'Luxury',
+                firstBadge: 'Budget',
+                secondBadge: 'Luxury',
                 value: 80
             }, {
-                first: 'Relaxed',
-                second: 'Active',
+                firstBadge: 'Relaxed',
+                secondBadge: 'Active',
                 value: 60
             }, {
-                first: 'Desolate',
-                second: 'Crowdy',
+                firstBadge: 'Desolate',
+                secondBadge: 'Crowdy',
                 value: 50
             }]
         };
@@ -159,7 +169,7 @@
         }]
 
 
-        
+
 
 
         function showInfo(day, location) {
@@ -192,7 +202,7 @@
                     // console.log(data);
                     var venue = data.data.response.venue;
 
-                    console.log(venue.bestPhoto.prefix + venue.bestPhoto.width + 'x' + venue.bestPhoto.height + venue.bestPhoto.suffix);
+                    console.log(venue.bestPhoto.prefix + '300x300' + venue.bestPhoto.suffix);
 
                     if (venue.tips.groups[0].items[0]) {
                         vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>' + venue.tips.groups[0].items[0].text + '</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more from Foursquare.</p>';
@@ -229,7 +239,7 @@
                         var venue = data.data.response.venue;
                         var photo = venue.bestPhoto.prefix + '1000x1000' + venue.bestPhoto.suffix;
                         loc.photo = photo;
-                        loc.description = venue.name  ;
+                        loc.description = venue.name;
 
                     });
             })
@@ -238,8 +248,8 @@
         function showMap(index) {
 
             var locs = vm.days[index - 1].locations;
-                getPhotos(locs);
-                vm.mapId = index;
+            getPhotos(locs);
+            vm.mapId = index;
         };
 
         function getRandomInRange(min, max) {

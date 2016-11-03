@@ -1,3 +1,5 @@
+$bg-color: #F6F5E7;
+$yellow-bg: #FFDF06;
 .text-muted {
     color: #777777;
 }
@@ -139,7 +141,6 @@ section .container-fluid {
 }
 
 section {
-    margin-top: 1em;
     /* map styles */
     .container-fluid {
         position: relative;
@@ -151,9 +152,9 @@ section {
         }
         .socials-group {
             position: absolute;
-            top: -1.8em;
+            top: -2.2em;
             right: 1em;
-            font-size: 24px;
+            font-size: 18px;
             i {
                 transform: scale(1.4);
                 padding: 0 5px;
@@ -174,10 +175,11 @@ section {
         }
     }
     .expert {
+        color: #3D380A;
         padding-top: 1em;
         p {
             color: #3D380A;
-            font-size: 24px;
+            font-size: 18px;
             margin-bottom: 0;
         }
         .clear-rating,
@@ -211,6 +213,7 @@ section {
             .progress {
                 height: 10px;
                 margin-top: .5em;
+                margin-left: 1em;
                 padding: 1px;
                 border: 1px solid #DFDCB0;
             }
@@ -218,6 +221,12 @@ section {
                 background-color: #B9E005;
                 border-radius: 5px;
             }
+            &:first-child {
+                padding-top: 1em;
+            }
+        }
+        .expert-overview {
+            font-weight: 800;
         }
         .btn {
             background-color: transparent;
@@ -231,148 +240,309 @@ section {
             }
         }
     }
-    .container-fluid.container_accordion {
-        border-radius: 0;
-        background-color: #F6F5E7;
-        .panel-group .panel + .panel {
-            margin-top: 0;
-        }
-        .panel {
-            border: 0;
-        }
-        .panel-default {
-            background-color: #F6F5E7;
-        }
-        .panel-heading {
-            position: relative;
-            background-color: #F6F5E7;
-            border-top: 2px dashed #E4E3D0;
-            border-bottom: 2px dashed #E4E3D0;
-            box-shadow: 1px 2px 2px lightgray;
-            width: 100%;
-            position: relative;
-            &:after {
-                content: "";
-                position: absolute;
-                z-index: -1;
-                box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
-                top: 0;
-                bottom: 0;
-                left: 10px;
-                right: 10px;
-                border-radius: 100px / 10px;
+    .container_accordion {
+        background-color: $bg-color;
+        border-radius: 5px;
+        border: 1px solid #E4E3D2;
+        .panel-group {
+            .panel {
+                border: 0;
             }
-            a {
-                font-weight: 800;
-                &:hover {
-                    text-decoration: none;
+            .panel-default {
+                padding-top: 1em;
+                background-color: inherit;
+                &:last-of-type {
+                    padding-bottom: 1em;
                 }
-                i {
+            }
+            .panel-heading {
+                position: relative;
+                background: $bg-color;
+                /* For browsers that do not support gradients */
+                background: -webkit-linear-gradient(left, white, $bg-color);
+                /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right, white, $bg-color);
+                /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right, white, $bg-color);
+                /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right, white, $bg-color);
+                /* Standard syntax */
+                border-top: 2px dashed #E4E3D0;
+                border-bottom: 2px dashed #E4E3D0;
+                box-shadow: 1px 2px 2px lightgray;
+                width: 100%;
+                &:after {
+                    content: "";
                     position: absolute;
+                    z-index: -2;
+                    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+                    top: 0;
+                    bottom: 0;
+                    left: 10px;
                     right: 10px;
-                    top: calc(50% - 16px);
-                    border: 2px solid #FEDE06;
-                    background-color: #fff;
-                    border-radius: 50%;
-                    font-size: 32px;
-                    height: 32px;
-                    width: 32px;
-                    &:before {
-                        position: absolute;
-                        right: 3px;
-                        top: -1.5px;
+                    border-radius: 100px / 10px;
+                }
+                a {
+                    font-weight: 800;
+                    &:hover {
+                        text-decoration: none;
                     }
-                }
-            }
-        }
-        gm-map {
-            height: 30em;
-            position: relative;
-            display: block;
-            padding: 1em;
-            box-sizing: border-box;
-            border-radius: 1em;
-            .gmnoprint,
-            .gm-style-cc,
-            img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"] {
-                display: none;
-            }
-            gm-infowindow {
-                background-color: #F6F5E7 !important;
-            }
-        }
-        .timeline {
-            position: relative;
-            padding: 20px 0 20px;
-            list-style: none;
-            .form {
-                display: flex;
-                -webkit-justify-content: space-around;
-                justify-content: space-around;
-            }
-            li {
-                padding-bottom: 2em;
-                .badge-left {
-                    left: -5em;
-                }
-                .badge-right {
-                    right: -5em;
-                }
-                .timeline-badge {
-                    position: absolute;
-                    top: 100px;
-                    color: #A29948;
-                    font-weight: 700;
-                    &:before {
-                        content: '';
+                    i {
                         position: absolute;
-                        width: 1px;
-                    }
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        width: 1px;
-                    }
-                }
-                .card {
-                    background-color: transparent;
-                    border-radius: 5px;
-                    box-shadow: 0px 0px 4px rgba(220, 219, 203, 1);
-                    .card-block {
+                        right: 10px;
+                        top: calc(50% - 16px);
+                        border: 2px solid $yellow-bg;
                         background-color: #fff;
-                        padding: 0 5px;
-                        border-bottom-left-radius: 5px;
-                        border-bottom-right-radius: 5px;
-                        p {
-                            padding: 1em;
+                        border-radius: 50%;
+                        font-size: 32px;
+                        height: 32px;
+                        width: 32px;
+                        &:before {
+                            position: absolute;
+                            right: 3px;
+                            top: -1.5px;
                         }
                     }
-                    img {
-                        margin: 0;
-                        border-top-left-radius: 5px;
-                        border-top-right-radius: 5px;
-                        width: 100%;
+                }
+            }
+            & .panel+.panel {
+                @extend .no-boxing;
+            }
+            gm-map {
+                height: 30em;
+                position: relative;
+                display: block;
+                padding: 1em;
+                box-sizing: border-box;
+                border-radius: 1em;
+                .gmnoprint,
+                .gm-style-cc,
+                img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"] {
+                    display: none;
+                }
+                gm-infowindow {
+                    background-color: $bg-color !important;
+                }
+            }
+            .timeline {
+                position: relative;
+                padding: 20px 0 20px;
+                list-style: none;
+                .form {
+                    display: flex;
+                    -webkit-justify-content: space-around;
+                    justify-content: space-around;
+                }
+                li {
+                    padding-bottom: 2em;
+                    .badge-left {
+                        left: -5em;
+                    }
+                    .badge-right {
+                        right: -5em;
+                    }
+                    .timeline-badge {
+                        position: absolute;
+                        top: 100px;
+                        color: #A29948;
+                        font-weight: 700;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            width: 1px;
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            width: 1px;
+                        }
+                    }
+                    .card {
+                        position: relative;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        box-shadow: 0px 0px 4px rgba(220, 219, 203, 1);
+                        .card-block {
+                            height: 9em;
+                            background-color: #fff;
+                            position: relative;
+                            border-bottom-left-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                            p {
+                                padding: 1em;
+                            }
+                            /*==================================================
+ * Drop shadow effect with box-shadow
+ * ===============================================*/
+                        }
+                        img {
+                            margin: 0;
+                            border-top-left-radius: 5px;
+                            border-top-right-radius: 5px;
+                            width: 100%;
+                        }
+                        .shadow {
+                            @extend .panel-heading;
+                            position: absolute;
+                            bottom: 2em;
+                            color: #E1614D;
+                            h3 {
+                                height: 1.5em;
+                                padding-left: 1em;
+                                font-weight: 100;
+                                i {}
+                            }
+                        }
                     }
                 }
             }
+        }
+    }
+    .browse-itinerary {
+        padding-bottom: 1em;
+        color: #3D380A;
+        letter-spacing: 1px;
+        h4 {
+            font-size: 24px;
+            font-weight: 800;
+        }
+        p {
+            font-size: 16px;
+        }
+        button {
+            width: 240px;
+            height: 3em;
+            background-color: $yellow-bg;
+            color: inherit;
+            text-transform: uppercase;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 2px rgba(223, 196, 10, 1);
         }
     }
 }
 
-.row {
-    color: #3D380A;
-    letter-spacing: 1px;
-    h3 {
-        font-size: 32px;
-        font-weight: 600;
+.carousel {
+    section {
+        position: relative;
+        background-color: #FAFAF2;
+        .details_button_wrapper {
+            min-height: 40px;
+            min-width: 30px;
+            max-width: 50px;
+            position: absolute;
+            right: 0;
+            top: 1em;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: $yellow-bg;
+            box-shadow: 2px 1px 1px 1px #DFC40A;
+            z-index: 999999999;
+            .details_button {
+                i {
+                    font-size: 24px;
+                    color: #443B25;
+                    font-weight: 800;
+                    position: absolute;
+                    top: calc(50% - 12px);
+                    left: calc(50% - 3px);
+                }
+            }
+        }
+        input[type="text"] {
+            width: 100px;
+            min-height: 40px;
+            background-color: $yellow-bg;
+            border-radius: 5px;
+            border: none;
+            margin: 1em;
+        }
+        @mixin placeholder {
+            ::-webkit-input-placeholder {
+                @content
+            }
+            :-moz-placeholder {
+                @content
+            }
+            ::-moz-placeholder {
+                @content
+            }
+            :-ms-input-placeholder {
+                @content
+            }
+        }
+        @include placeholder {
+            color: #4A4024;
+            text-align: center;
+            font-weight: 100;
+            padding: 1em;
+        }
+        .card {
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            position: relative;
+            margin-bottom: 4em;
+            a {
+                color: #453C25;
+                background-color: white;
+            }
+            h4 {
+                padding-left: 1.5em;
+                padding-bottom: 10px;
+                font-weight: 600;
+            }
+            .card-header p {
+                padding-left: 2em;
+            }
+            .row div:last-child {
+                position: absolute;
+                top: 1em;
+                right: 1em;
+                font-weight: 100;
+            }
+            .icon {
+                height: 32px;
+                display: block;
+                float: left;
+            }
+        }
+        .card-block {
+            color: #524E2A;
+        }
+        .card .timeline-badge {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 1em;
+            bottom: -3.2em;
+            border: 2px solid $yellow-bg;
+            border-radius: 50%;
+            padding-left: 5px;
+            padding-top: 3px;
+            background-color: white;
+        }
     }
-    p {
-        font-size: 20px;
+    div {
+        &.vertical-line {
+            position: absolute;
+            width: 2px;
+            left: 50%;
+            background-color: $yellow-bg;
+        }
+        &.vertical-line-before {
+            top: -15px;
+        }
+        &.vertical-line-after {
+            bottom: -15px;
+        }
     }
 }
 
 footer {
-    min-height: 1px;
+    margin-top: 4em;
     background-color: #453C25;
     ul {
         padding-top: 1em !important;

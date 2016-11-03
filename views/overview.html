@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row image-wrapper">
             <div class="col-xs-12 col-md-4 image-container">
-                <img src="http://placekitten.com/650/400" alt="" class="img-center main">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSFMJIudhmLRhgufIMoy6ZGTwAVgcXqKw4LoFSxOuZbV4yZNPdq" alt="" class="img-center main" width="650" height="400">
             </div>
             <div class="col-xs-12 col-md-3 image-container hidd">
                 <img src="http://placekitten.com/500/200" alt="" class="img-center">
@@ -40,12 +40,9 @@
                 <div class="row no-padding">
                     <div class="row">
                         <div class="col-xs-2">
-                            <img class="img-rounded" 
-                                 src="https://s-media-cache-ak0.pinimg.com/originals/64/6e/5d/646e5d6efe58fd61cdd6f604b8ca3f0e.jpg" 
-                                 alt="Audrea Tatoo" 
-                                 height="90px" width="90px">
+                            <img class="img-rounded" src="https://s-media-cache-ak0.pinimg.com/originals/64/6e/5d/646e5d6efe58fd61cdd6f604b8ca3f0e.jpg" alt="Audrea Tatoo" height="90px" width="90px">
                         </div>
-                        <div class="col-xs-10 col-xs-push-1  col-md-push-0 col-md-6 col-md-push-2 col-lg-push-1 expert-window">
+                        <div class="col-xs-10  col-sm-push-0  col-lg-push-1 expert-window">
                             <span class="text-muted">Local Expert</span>
                             <br>
                             <p>{{overview.expert.name}}</p>
@@ -54,23 +51,18 @@
                     </div>
                 </div>
                 <div class="col-xs-12 progress-bar-container text-muted" ng-repeat="data in overview.expert.badges">
-                    <div class="row"><span class="col-xs-3 no-padding pull-left">{{data.first}}</span>
-                        <div class="progress col-xs-5 col-xs-push-1">
-                            <div class="progress-bar progress-bar-success" 
-                                 role="progressbar" 
-                                 aria-valuenow="{{data.value}}" 
-                                 aria-valuemin="0" 
-                                 aria-valuemax="100" 
-                                 ng-style="{'width':data.value+'%'}">
+                    <div class="row"><span class="col-xs-3 no-padding pull-left">{{data.firstBadge}}</span>
+                        <div class="progress col-xs-5">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{data.value}}" aria-valuemin="0" aria-valuemax="100" ng-style="{'width':data.value+'%'}">
                             </div>
                         </div>
-                        <span class="col-xs-3 pull-right text-right">{{data.second}}</span>
+                        <span class="col-xs-3 pull-right text-right no-padding">{{data.secondBadge}}</span>
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-lg-6">
                 <div class="row">
-                    <h3 style="color:black ">Overview</h3>
+                    <h3 class="expert-overview">Overview</h3>
                     <div>
                         <p>{{overview.expert.overview[0]}}</p>
                     </div>
@@ -79,96 +71,77 @@
                             {{overview.expert.overview[1]}}
                         </p>
                     </div>
-                    <button type="button" 
-                            class="btn center-block" 
-                            data-toggle="collapse" 
-                            data-target="#content"
-                            >
-                        <i class="fa" 
-                           aria-hidden="true"
-                           data-ng-init="active = false" 
-                           data-ng-click="active=!active" 
-                           data-ng-class=" active?'fa-angle-up':'fa-angle-down'"></i>
+                    <button type="button" class="btn center-block" data-toggle="collapse" data-target="#content">
+                        <i class="fa" aria-hidden="true" data-ng-init="active = false" data-ng-click="active=!active" data-ng-class=" active?'fa-angle-up':'fa-angle-down'"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid container_accordion no-padding">
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default" ng-repeat="day in overview.days">
-                <div class="panel-heading">
-                    <h4 class="panel-title" align="center">
-                       <a data-toggle="collapse"
-                          data-parent="#accordion" 
-                          data-target="{{'#collapse'+$index}}" 
-                          class="accordion-toggle" 
-                          ng-click="overview.showMap(day.day)">{{"Day " + day.day}}<i class="fa" 
-                           aria-hidden="true"
-                           ng-init="activeIcon = false" 
-                           ng-click="activeIcon=!activeIcon" 
-                           ng-class=" activeIcon?'fa-angle-up':'fa-angle-down'"></i></a>
-                    </h4>
-                </div>
-                <div id="{{'collapse'+$index}}" class="panel-collapse collapse">
-                    <div class="panel-body no-padding">
-                        <!-- map -->
-                        <!-- <button ng-click="overview.showInfo('iw1')">Get window</button> -->
-                        <ul id="timeline" class="timeline col-xs-12 col-md-12">
-                            <li class="col-xs-12 col-md-5">
-                                <gm-map class="" 
-                                        ng-show="overview.mapId == day.day" 
-                                        gm-address="{address:'{{day.locations[0].alt}}' }" 
-                                        options="{zoom: 4}" id="{{'map'+$index}}">
-                                    <gm-marker position="{{location.coords}}" 
-                                               ng-repeat="location in  day.locations">
-                                        <gm-infowindow id="{{'iw'+location.index}}" 
-                                                       ng-if="overview.showId == day.day +''+ location.index" 
-                                                       options="{content: overview.locationMessage}"></gm-infowindow>
-                                    </gm-marker>
-                                </gm-map>
-                            </li>
-                           <!--  <li class="col-xs-12 col-md-6">
-                                <form name="myForm" class="form">
-                                      <label>
-                                        <input type="radio" ng-model="overview.venueType" value="cafe">
-                                        Cafes
-                                      </label>
-                                      <label>
-                                        <input type="radio" ng-model="overview.venueType" value="bar">
-                                        Bars
-                                      </label>
-                                      <label>
-                                        <input type="radio" ng-model="overview.venueType" value="shop">
-                                        Shops
-                                      </label>
-                                      
-                                    </form>    
-                            </li> -->
-                            
-                            <li ng-repeat="location in day.locations" 
-                                class="col-xs-8  col-md-5 col-md-push-0" 
-                                ng-class="{'none-after':$last ,'none-before':$first, 'pull-right':$even, 'pull-left': $odd}" 
-                                >
-                                <div class="timeline-badge text-center" 
-                                     ng-class="{'badge-left':$even, 'badge-right': $odd}">
-                                    <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i>
-                                </div>
-                                <div class="timeline-panel">
-                                    
-                                    <div class="card" ng-click="overview.showInfo(day.day, location.index)">
-                                        <img class="card-img-top" ng-src="{{location.photo}}" alt="{{location.alt}}" width="300px">
-                                        <div class="card-block">
-                                            <p class="card-text text-muted no-margin">{{location.description}}</p>
+    <div class="container container_accordion no-padding">
+        <div class="col-xs-12 no-padding">
+            <div class="row">
+                <div class="panel-group no-margin" id="accordion">
+                    <div class="panel panel-default" ng-repeat="day in overview.days">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" align="center">
+                                <a data-toggle="collapse"
+                                  data-parent="#accordion" 
+                                  data-target="{{'#collapse'+$index}}" 
+                                  class="accordion-toggle" 
+                                  ng-click="overview.showMap(day.day)">{{"Day " + day.day}}<i class="fa" 
+                                   aria-hidden="true"
+                                   ng-init="activeIcon = false" 
+                                   ng-click="activeIcon=!activeIcon" 
+                                   ng-class=" activeIcon?'fa-angle-up':'fa-angle-down'"></i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="{{'collapse'+$index}}" class="panel-collapse collapse">
+                            <div class="panel-body no-padding">
+                                <!-- map -->
+                                <!-- <button ng-click="overview.showInfo('iw1')">Get window</button> -->
+                                <ul id="timeline" class="timeline col-xs-12 col-md-12">
+                                    <li class="col-xs-12 col-md-5 map">
+                                        <gm-map class="" ng-show="overview.mapId == day.day" gm-address="{address:'{{day.locations[0].alt}}' }" options="{zoom: 4}" id="{{'map'+$index}}">
+                                            <gm-marker position="{{location.coords}}" ng-repeat="location in  day.locations" on-click="overview.showInfo(day.day, location.index)">
+                                                <gm-infowindow id="{{'iw'+location.index}}" ng-if="overview.showId == day.day +''+ location.index" options="{content: overview.locationMessage}"></gm-infowindow>
+                                            </gm-marker>
+                                        </gm-map>
+                                    </li>
+                                    <li ng-repeat="location in day.locations" class="col-xs-8  col-md-5 col-md-push-0" ng-class="{'none-after':$last ,'none-before':$first, 'pull-right':$even, 'pull-left': $odd}">
+                                        <div class="timeline-badge text-center" ng-class="{'badge-left':$even, 'badge-right': $odd}">
+                                            <p class="no-boxing">{{location.time}}</p> <i class="fa fa-circle-o" align="center"></i>
                                         </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                        <div class="timeline-panel">
+                                            <div class="card" ng-click="overview.showInfo(day.day, location.index)">
+                                                <img class="card-img-top" ng-src="{{location.photo}}" alt="{{location.alt}}" width="100%">
+                                                <div class="card-block no-padding">
+                                                    <p class="card-text text-muted no-margin">{{location.description}}</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="box shadow" ng-if="overview.includeDesktopTemplate">
+                                                        <h3 class="no-boxing"><i class="fa fa-map-marker" aria-hidden="true"></i> Show on the map</h3></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row text-center browse-itinerary">
+            <div class="col-xs-12">
+                <img src="images/track.png" class="img-responsive center-block" alt="Want to learn more?">
+                <h4>Want more itineraries?</h4>
+                <p>Use the markerplace to find the itinerary with different cities and places</p>
+                <button class="btn-block center-block">Browse Itinerary</button>
+            </div>
         </div>
     </div>
 </section>

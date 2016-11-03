@@ -1,114 +1,63 @@
 <div id="myCarousel" class="carousel slide" data-interval="false">
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <section class="container" id="details">
-                    <div class="details_button_wrapper">
-                        <a href="#myCarousel" role="button" data-slide="next" class="details_button text-center"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div>
-                    <input type="text">
-                    <div id="accordion1" role="tablist" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <h5 class="mb-0">
-                              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <section class="container" id="details">
+                <div class="details_button_wrapper">
+                    <a href="#myCarousel" role="button" data-slide="next" class="details_button text-center"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+                <input type="text">
+                <div id="accordion1" role="tablist" ng-repeat="day in details.info">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                              
                                  <div class="row">
                                     <div class="col-xs-12">
-                                       <img class="icon" src="images/food.png" width="20px" height="20px;">
-                                       <h4 class="no-padding">Trattoria Del Ropeton</h4>
-                                       <p class="text-muted">Via Fontana del Ferro, 1, Verona, Italy</p>
+                                       
+                                       <img class="icon" ng-src="{{day.headerIcon}}" width="32px" height="32px"><h4 class="no-padding">{{day.name}}</h4>
+                                       <p class="text-muted">{{day.street}}</p>
                                     </div>
                                     <div class="">
                                        <span>
-                                       <i class="fa fa-clock-o"></i> 10.00
+                                       <i class="fa fa-clock-o"></i>{{day.time}}
                                        </span>
                                     </div>
                                  </div>
-                              </a>
+                              
                            </h5>
-                            </div>
-                            <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="card-block">
-                                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/2d/b8/13/photo0jpg.jpg" class="card-image" alt="" width="100%">
-                                    <p class="no-padding padding">Amazing owner who sings and serves the food himself! Expirience which you'll never forget and will include to the travel different mockups:)</p>
-                                </div>
-                            </div>
-                            <div class="timeline-badge">
-                                <div class="vertical-line vertical-line-before" style="height: 15px;"></div>
-                                <i class="fa fa-car" aria-hidden="true"></i><span></span>
-                                <div class="vertical-line vertical-line-after" style="height: 15px;"></div>
+                        </div>
+                        <div id="{{'collapse'+$index}}" class="panel-collapse collapse">
+                            <div class="card-block">
+                                <img ng-src="{{day.photo}}" class="card-image" alt="" width="100%">
+                                <p class="no-padding padding">{{day.description }}</p>
                             </div>
                         </div>
-                    </div>
-                    <div id="accordion2" role="tablist" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingTwo">
-                                <h5 class="mb-0">
-                              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                 <div class="row">
-                                    <div class="col-xs-12">
-                                       <i class="fa fa-shopping-cart" style="font-size:18px;"></i>
-                                       <h4 class="no-padding">Trattoria Da Ropeton</h4>
-                                       <p class="text-muted">Via Fontana del Ferro, 1, Verona, Italy</p>
-                                    </div>
-                                    <div class="">
-                                       <span>
-                                       <i class="fa fa-clock-o"></i> 11.00
-                                       </span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-block">
-                                    <img src="https://placekitten.com/1000" class="card-image" alt="" width="100%">
-                                    <p class="no-padding padding">Want some Lorem? Nah, Papier-mache claymore mine nano-physical computer human order-flow franchise augmented reality San Francisco futurity neon DIY convenience store table beef noodles refrigerator. Skyscraper tank-traps Shibuya neon Chiba car drugs numinous artisanal office crypto-savant. Soul-delay assassin saturation point vehicle post-bridge numinous table advert urban. Pre-range-rover singularity advert long-chain hydrocarbons camera 8-bit fetishism San Francisco skyscraper.-ware-space neural computer receding futurity Legba katana digital. Marketing shrine assassin smart-man concrete DIY computer paranoid Tokyo market range-rover urban. Market hacker chrome vinyl bridge disposable systemic. Legba cartel city papier-mache assault construct Chiba digital grenade range-rover rifle systemic. Savant cyber-Chiba grenade render-farm wonton soup girl monofilament-space warehouse convenience store j-pop. </p>
-                                </div>
-                            </div>
-                            <div class="timeline-badge">
-                                <div class="vertical-line vertical-line-before" style="height: 15px;"></div>
-                                <i class="fa fa-bicycle" aria-hidden="true"></i><span></span>
-                                <div class="vertical-line vertical-line-after" style="height: 15px;"></div>
-                            </div>
+                        <a data-toggle="collapse"
+                                  data-parent="#accordion1" 
+                                  data-target="{{'#collapse'+$index}}" 
+                                  class="accordion-toggle">
+                                  <i class="fa" 
+                                   aria-hidden="true"
+                                   ng-init="activeIcon = false" 
+                                   ng-click="activeIcon=!activeIcon" 
+                                   ng-class=" activeIcon?'fa-angle-up':'fa-angle-down'"></i>
+                                </a>
+                        <div class="timeline-badge">
+                            <div class="vertical-line vertical-line-before" style="height: 15px;"></div>
+                            <i class="{{day.bottomIcon}}" aria-hidden="true"></i><span></span>
+                            <div class="vertical-line vertical-line-after" style="height: 15px;"></div>
                         </div>
                     </div>
-                    <div id="accordion3" role="tablist" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingThree">
-                                <h5 class="mb-0">
-                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                 <div class="row">
-                                    <div class="col-xs-12">
-                                       <i class="fa fa-heart" style="font-size:18px;"></i>
-                                       <h4 class="no-padding">Trattoria Da Ropeton</h4>
-                                       <p class="text-muted">Via Fontana del Ferro, 1, Verona, Italy</p>
-                                    </div>
-                                    <div class="">
-                                       <span>
-                                       <i class="fa fa-clock-o"></i> 12.00
-                                       </span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="card-block">
-                                    <img src="https://placekitten.com/1200" class="card-image" alt="" width="100%">
-                                    <p class="no-padding padding">Amazing owner who sings and serves the food himself! Expirience which you'll never forget and will include to the travel different mockups:)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                </div>
+              </section>
+        </div>
+        <div class="item item_map">
+            <div class="details_button_wrapper_left">
+                <a href="#myCarousel" role="button" data-slide="prev" class="details_left text-center"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
             </div>
-            <div class="item item_map">
-                <div class="details_button_wrapper_left">
-                    <a href="#myCarousel" role="button" data-slide="prev" class="details_left text-center"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-                </div>
-                <div id="map1">
-                </div>
+            <div id="map1">
             </div>
         </div>
-        <!-- Left and right controls -->
     </div>
+    <!-- Left and right controls -->
+</div>

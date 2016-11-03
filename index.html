@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_s.css" media="screen and (max-width:992px)">
+    <link rel="stylesheet" href="css/style_s.css" media="screen and (max-width:991px)">
     <link rel="stylesheet" href="bower_components/angular-input-stars-directive/angular-input-stars.css"></script>
     
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/vendor/jquery.navgoco.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -43,5 +44,38 @@
     
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAW4oQDFJX04raLXEx-Kte0hoqGXJ-ZLuU
 &libraries=places,visualization,drawing,geometry,places"></script>
+ <script>
+    $(document).ready(function() {
 
+        //Navigation Menu Slider
+        $('#nav-expander').on('click', function(e) {
+            e.preventDefault();
+            $('body').toggleClass('nav-expanded');
+        });
+        $('#nav-close').on('click', function(e) {
+            e.preventDefault();
+            $('body').removeClass('nav-expanded');
+        });
+
+
+        // Initialize navgoco with default options
+        $(".main-menu").navgoco({
+            caret: '<span class="caret"></span>',
+            accordion: false,
+            openClass: 'open',
+            save: true,
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+
+    });
+    </script>
 </html>

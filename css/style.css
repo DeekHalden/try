@@ -8,7 +8,7 @@
 .navbar-default {
   margin: 0; }
 
-.no-boxing,
+.no-boxing, section .container_accordion .panel-group .panel + .panel,
 .row {
   padding: 0;
   margin: 0; }
@@ -106,7 +106,6 @@ section .container-fluid {
     border: none; }
 
 section {
-  margin-top: 1em;
   /* map styles */ }
   section .container-fluid {
     position: relative; }
@@ -115,9 +114,9 @@ section {
       filter: blur(2px); }
     section .container-fluid .socials-group {
       position: absolute;
-      top: -1.8em;
+      top: -2.2em;
       right: 1em;
-      font-size: 24px; }
+      font-size: 18px; }
       section .container-fluid .socials-group i {
         transform: scale(1.4);
         padding: 0 5px; }
@@ -132,10 +131,11 @@ section {
         section .container-fluid .heading-group i:last-child {
           border-right: none; }
   section .expert {
+    color: #3D380A;
     padding-top: 1em; }
     section .expert p {
       color: #3D380A;
-      font-size: 24px;
+      font-size: 18px;
       margin-bottom: 0; }
     section .expert .clear-rating,
     section .expert .caption {
@@ -161,11 +161,16 @@ section {
     section .expert .progress-bar-container .progress {
       height: 10px;
       margin-top: .5em;
+      margin-left: 1em;
       padding: 1px;
       border: 1px solid #DFDCB0; }
     section .expert .progress-bar-container .progress-bar.progress-bar-success {
       background-color: #B9E005;
       border-radius: 5px; }
+    section .expert .progress-bar-container:first-child {
+      padding-top: 1em; }
+    section .expert .expert-overview {
+      font-weight: 800; }
     section .expert .btn {
       background-color: transparent;
       color: #2158D5;
@@ -174,119 +179,252 @@ section {
         outline: none; }
       section .expert .btn:active {
         box-shadow: none; }
-  section .container-fluid.container_accordion {
-    border-radius: 0;
-    background-color: #F6F5E7; }
-    section .container-fluid.container_accordion .panel-group .panel + .panel {
-      margin-top: 0; }
-    section .container-fluid.container_accordion .panel {
+  section .container_accordion {
+    background-color: #F6F5E7;
+    border-radius: 5px;
+    border: 1px solid #E4E3D2; }
+    section .container_accordion .panel-group .panel {
       border: 0; }
-    section .container-fluid.container_accordion .panel-default {
-      background-color: #F6F5E7; }
-    section .container-fluid.container_accordion .panel-heading {
+    section .container_accordion .panel-group .panel-default {
+      padding-top: 1em;
+      background-color: inherit; }
+      section .container_accordion .panel-group .panel-default:last-of-type {
+        padding-bottom: 1em; }
+    section .container_accordion .panel-group .panel-heading, section .container_accordion .panel-group .timeline li .card .shadow {
       position: relative;
-      background-color: #F6F5E7;
+      background: #F6F5E7;
+      /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, white, #F6F5E7);
+      /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, white, #F6F5E7);
+      /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, white, #F6F5E7);
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, white, #F6F5E7);
+      /* Standard syntax */
       border-top: 2px dashed #E4E3D0;
       border-bottom: 2px dashed #E4E3D0;
       box-shadow: 1px 2px 2px lightgray;
-      width: 100%;
-      position: relative; }
-      section .container-fluid.container_accordion .panel-heading:after {
+      width: 100%; }
+      section .container_accordion .panel-group .panel-heading:after, section .container_accordion .panel-group .timeline li .card .shadow:after {
         content: "";
         position: absolute;
-        z-index: -1;
+        z-index: -2;
         box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
         top: 0;
         bottom: 0;
         left: 10px;
         right: 10px;
         border-radius: 100px / 10px; }
-      section .container-fluid.container_accordion .panel-heading a {
+      section .container_accordion .panel-group .panel-heading a, section .container_accordion .panel-group .timeline li .card .shadow a {
         font-weight: 800; }
-        section .container-fluid.container_accordion .panel-heading a:hover {
+        section .container_accordion .panel-group .panel-heading a:hover, section .container_accordion .panel-group .timeline li .card .shadow a:hover {
           text-decoration: none; }
-        section .container-fluid.container_accordion .panel-heading a i {
+        section .container_accordion .panel-group .panel-heading a i, section .container_accordion .panel-group .timeline li .card .shadow a i {
           position: absolute;
           right: 10px;
           top: calc(50% - 16px);
-          border: 2px solid #FEDE06;
+          border: 2px solid #FFDF06;
           background-color: #fff;
           border-radius: 50%;
           font-size: 32px;
           height: 32px;
           width: 32px; }
-          section .container-fluid.container_accordion .panel-heading a i:before {
+          section .container_accordion .panel-group .panel-heading a i:before, section .container_accordion .panel-group .timeline li .card .shadow a i:before {
             position: absolute;
             right: 3px;
             top: -1.5px; }
-    section .container-fluid.container_accordion gm-map {
+    section .container_accordion .panel-group gm-map {
       height: 30em;
       position: relative;
       display: block;
       padding: 1em;
       box-sizing: border-box;
       border-radius: 1em; }
-      section .container-fluid.container_accordion gm-map .gmnoprint,
-      section .container-fluid.container_accordion gm-map .gm-style-cc,
-      section .container-fluid.container_accordion gm-map img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"] {
+      section .container_accordion .panel-group gm-map .gmnoprint,
+      section .container_accordion .panel-group gm-map .gm-style-cc,
+      section .container_accordion .panel-group gm-map img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"] {
         display: none; }
-      section .container-fluid.container_accordion gm-map gm-infowindow {
+      section .container_accordion .panel-group gm-map gm-infowindow {
         background-color: #F6F5E7 !important; }
-    section .container-fluid.container_accordion .timeline {
+    section .container_accordion .panel-group .timeline {
       position: relative;
       padding: 20px 0 20px;
       list-style: none; }
-      section .container-fluid.container_accordion .timeline .form {
+      section .container_accordion .panel-group .timeline .form {
         display: flex;
         -webkit-justify-content: space-around;
         justify-content: space-around; }
-      section .container-fluid.container_accordion .timeline li {
+      section .container_accordion .panel-group .timeline li {
         padding-bottom: 2em; }
-        section .container-fluid.container_accordion .timeline li .badge-left {
+        section .container_accordion .panel-group .timeline li .badge-left {
           left: -5em; }
-        section .container-fluid.container_accordion .timeline li .badge-right {
+        section .container_accordion .panel-group .timeline li .badge-right {
           right: -5em; }
-        section .container-fluid.container_accordion .timeline li .timeline-badge {
+        section .container_accordion .panel-group .timeline li .timeline-badge {
           position: absolute;
           top: 100px;
           color: #A29948;
           font-weight: 700; }
-          section .container-fluid.container_accordion .timeline li .timeline-badge:before {
+          section .container_accordion .panel-group .timeline li .timeline-badge:before {
             content: '';
             position: absolute;
             width: 1px; }
-          section .container-fluid.container_accordion .timeline li .timeline-badge:after {
+          section .container_accordion .panel-group .timeline li .timeline-badge:after {
             content: '';
             position: absolute;
             width: 1px; }
-        section .container-fluid.container_accordion .timeline li .card {
-          background-color: transparent;
+        section .container_accordion .panel-group .timeline li .card {
+          position: relative;
+          background-color: #fff;
           border-radius: 5px;
           box-shadow: 0px 0px 4px #dcdbcb; }
-          section .container-fluid.container_accordion .timeline li .card .card-block {
+          section .container_accordion .panel-group .timeline li .card .card-block {
+            height: 9em;
             background-color: #fff;
-            padding: 0 5px;
+            position: relative;
             border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px; }
-            section .container-fluid.container_accordion .timeline li .card .card-block p {
+            border-bottom-right-radius: 5px;
+            /*==================================================
+ * Drop shadow effect with box-shadow
+ * ===============================================*/ }
+            section .container_accordion .panel-group .timeline li .card .card-block p {
               padding: 1em; }
-          section .container-fluid.container_accordion .timeline li .card img {
+          section .container_accordion .panel-group .timeline li .card img {
             margin: 0;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             width: 100%; }
+          section .container_accordion .panel-group .timeline li .card .shadow {
+            position: absolute;
+            bottom: 2em;
+            color: #E1614D; }
+            section .container_accordion .panel-group .timeline li .card .shadow h3 {
+              height: 1.5em;
+              padding-left: 1em;
+              font-weight: 100; }
+  section .browse-itinerary {
+    padding-bottom: 1em;
+    color: #3D380A;
+    letter-spacing: 1px; }
+    section .browse-itinerary h4 {
+      font-size: 24px;
+      font-weight: 800; }
+    section .browse-itinerary p {
+      font-size: 16px; }
+    section .browse-itinerary button {
+      width: 240px;
+      height: 3em;
+      background-color: #FFDF06;
+      color: inherit;
+      text-transform: uppercase;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 2px 2px #dfc40a; }
 
-.row {
-  color: #3D380A;
-  letter-spacing: 1px; }
-  .row h3 {
-    font-size: 32px;
-    font-weight: 600; }
-  .row p {
-    font-size: 20px; }
+.carousel section {
+  position: relative;
+  background-color: #FAFAF2; }
+  .carousel section .details_button_wrapper {
+    min-height: 40px;
+    min-width: 30px;
+    max-width: 50px;
+    position: absolute;
+    right: 0;
+    top: 1em;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #FFDF06;
+    box-shadow: 2px 1px 1px 1px #DFC40A;
+    z-index: 999999999; }
+    .carousel section .details_button_wrapper .details_button i {
+      font-size: 24px;
+      color: #443B25;
+      font-weight: 800;
+      position: absolute;
+      top: calc(50% - 12px);
+      left: calc(50% - 3px); }
+  .carousel section input[type="text"] {
+    width: 100px;
+    min-height: 40px;
+    background-color: #FFDF06;
+    border-radius: 5px;
+    border: none;
+    margin: 1em; }
+  .carousel section ::-webkit-input-placeholder {
+    color: #4A4024;
+    text-align: center;
+    font-weight: 100;
+    padding: 1em; }
+  .carousel section :-moz-placeholder {
+    color: #4A4024;
+    text-align: center;
+    font-weight: 100;
+    padding: 1em; }
+  .carousel section ::-moz-placeholder {
+    color: #4A4024;
+    text-align: center;
+    font-weight: 100;
+    padding: 1em; }
+  .carousel section :-ms-input-placeholder {
+    color: #4A4024;
+    text-align: center;
+    font-weight: 100;
+    padding: 1em; }
+  .carousel section .card {
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    position: relative;
+    margin-bottom: 4em; }
+    .carousel section .card a {
+      color: #453C25;
+      background-color: white; }
+    .carousel section .card h4 {
+      padding-left: 1.5em;
+      padding-bottom: 10px;
+      font-weight: 600; }
+    .carousel section .card .card-header p {
+      padding-left: 2em; }
+    .carousel section .card .row div:last-child {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      font-weight: 100; }
+    .carousel section .card .icon {
+      height: 32px;
+      display: block;
+      float: left; }
+  .carousel section .card-block {
+    color: #524E2A; }
+  .carousel section .card .timeline-badge {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 1em;
+    bottom: -3.2em;
+    border: 2px solid #FFDF06;
+    border-radius: 50%;
+    padding-left: 5px;
+    padding-top: 3px;
+    background-color: white; }
+
+.carousel div.vertical-line {
+  position: absolute;
+  width: 2px;
+  left: 50%;
+  background-color: #FFDF06; }
+
+.carousel div.vertical-line-before {
+  top: -15px; }
+
+.carousel div.vertical-line-after {
+  bottom: -15px; }
 
 footer {
-  min-height: 1px;
+  margin-top: 4em;
   background-color: #453C25; }
   footer ul {
     padding-top: 1em !important; }
