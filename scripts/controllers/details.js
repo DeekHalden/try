@@ -22,7 +22,7 @@
             description: 'Amazing owner who sings and serves the food himself! Expirience which you\'ll never forget and will include to the travel different mockups:)',
             photo: 'https://media-cdn.tripadvisor.com/media/photo-s/0d/2d/b8/13/photo0jpg.jpg',
             bottomIcon: 'fa fa-car',
-            headerIcon:'../images/food.png'
+            headerIcon:'http://icon-icons.com/icons2/390/PNG/512/knife-fork_39057.png'
         }, {
             time: '11.00',
             name: 'Trattoria del Ropeton',

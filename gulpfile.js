@@ -10,7 +10,7 @@ gulp.task('uncss', function () {
         .pipe(sass())
         
         .pipe(uncss({
-            html: ['views/**/*.html','bower_components/**/*.js', 'scripts/**/*.js']
+            html: ['views/**/*.html','bower_components/**/**/**/*.js', 'scripts/**/*.js']
         }))
         .pipe(nano())
         .pipe(gulp.dest('./out'));

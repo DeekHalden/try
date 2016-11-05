@@ -1,12 +1,6 @@
 .hidd {
   display: none; }
 
-nav .navbar-toggle {
-  margin-right: 4px; }
-
-nav li {
-  padding-left: 10px; }
-
 section {
   overflow-x: hidden; }
   section .image-wrapper .main {

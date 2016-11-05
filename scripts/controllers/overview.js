@@ -11,14 +11,12 @@
     angular.module('test')
         .controller('OverviewController', OverviewFunction);
 
-    OverviewFunction.$inject = ['$state', '$http','$window'];
+    OverviewFunction.$inject = ['$state', '$http', '$window', 'OverviewService'];
 
-    function OverviewFunction($state, $http, $window) {
+    function OverviewFunction($state, $http, $window, OverviewService) {
         // local vars
 
 
-        var clientID = "BHTTXP2QZ1D3A1LDT1JJHOQH4Y3VGXP24SHMIPHOWTLO0DVA";
-        var clientSecret = "GUQA4EATBIAT4GEP5GIJJVZPCKLB3AOEI0PKT4C4DUTMCCKQ";
 
         // global vars
         var vm = this;
@@ -36,9 +34,6 @@
         }
 
 
-
-        var clientID = 'BHTTXP2QZ1D3A1LDT1JJHOQH4Y3VGXP24SHMIPHOWTLO0DVA';
-        var clientSecret = 'GUQA4EATBIAT4GEP5GIJJVZPCKLB3AOEI0PKT4C4DUTMCCKQ';
 
         vm.showId = 0;
         vm.mapId = 0;
@@ -168,15 +163,11 @@
             }]
         }]
 
-
-
-
-
         function showInfo(day, location) {
             vm.showId = 0;
 
             var locs = vm.days[day - 1].locations[location - 1];
-            return httpGetId(locs)
+            return OverviewService.httpGetId(locs)
                 .then(function(data) {
 
 
@@ -189,7 +180,7 @@
 
                         var id = venues[0].id;
 
-                        return httpGetVenueById(id)
+                        return OverviewService.httpGetVenueById(id);
 
                     } else {
                         vm.locationMessage = '<p>No information found. </p>';
@@ -202,7 +193,7 @@
                     // console.log(data);
                     var venue = data.data.response.venue;
 
-                    console.log(venue.bestPhoto.prefix + '300x300' + venue.bestPhoto.suffix);
+
 
                     if (venue.tips.groups[0].items[0]) {
                         vm.locationMessage = '<h3>' + venue.name + '</h3>' + '<p>' + venue.tips.groups[0].items[0].text + '</p><p>Click<a href="' + venue.shortUrl + '" target="_blank"> here </a>to learn more from Foursquare.</p>';
@@ -219,20 +210,14 @@
         vm.photos = [];
 
 
-        function httpGetId(loc) {
-            return $http.get("https://api.foursquare.com/v2/venues/search?ll=" + loc.coords[0] + "%2C" + loc.coords[1] + "&client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20151222&query=" + loc.alt + "")
-        }
 
-        function httpGetVenueById(id) {
-            return $http.get("https://api.foursquare.com/v2/venues/" + id + "?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20151222")
-        }
 
         function getPhotos(locs) {
             angular.forEach(locs, function(loc) {
-                return httpGetId(loc)
+                return OverviewService.httpGetId(loc)
                     .then(function(data) {
                         var id = data.data.response.venues[0].id;
-                        return httpGetVenueById(id);
+                        return OverviewService.httpGetVenueById(id);
 
                     })
                     .then(function(data) {

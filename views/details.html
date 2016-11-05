@@ -1,7 +1,7 @@
 <div id="myCarousel" class="carousel slide" data-interval="false">
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <section class="container" id="details">
+            <section class="container-fluid no-padding" id="details">
                 <div class="details_button_wrapper">
                     <a href="#myCarousel" role="button" data-slide="next" class="details_button text-center"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
@@ -26,9 +26,9 @@
                               
                            </h5>
                         </div>
-                        <div id="{{'collapse'+$index}}" class="panel-collapse collapse">
+                        <div id="{{'collapse'+$index}}" class="panel-collapse collapse" ng-class="{'in': $first}">
                             <div class="card-block">
-                                <img ng-src="{{day.photo}}" class="card-image" alt="" width="100%">
+                                <img ng-src="{{day.photo}}" class="card-image" alt="">
                                 <p class="no-padding padding">{{day.description }}</p>
                             </div>
                         </div>
@@ -51,13 +51,7 @@
                 </div>
               </section>
         </div>
-        <div class="item item_map">
-            <div class="details_button_wrapper_left">
-                <a href="#myCarousel" role="button" data-slide="prev" class="details_left text-center"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-            </div>
-            <div id="map1">
-            </div>
-        </div>
+       
     </div>
     <!-- Left and right controls -->
 </div>
