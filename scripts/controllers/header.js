@@ -3,24 +3,17 @@
 
     angular.module('test')
         .controller('NavController', HeaderController);
-    HeaderController.$inject = ['$state', '$scope'];
-
-    function HeaderController($state, $scope) {
+    HeaderController.$inject = ['$state'];
 
 
-        $scope.stateis = function(curstate) {
+    function HeaderController($state) {
+        var vm = this;
+
+        vm.stateis = function(curstate) {
             return $state.is(curstate);
         };
 
-        $scope.class = 'in';
-        $scope.toggleClass = function() {
-            if ($scope.class === "out")
-                $scope.class = "in";
-            else {
-                $scope.class = "out";
-            
-            }
-        }
+        
 
     }
 

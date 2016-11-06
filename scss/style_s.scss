@@ -1,8 +1,16 @@
 .hidd {
   display: none;
 }
+$trans: .2s linear all;
 
-
+.main {
+    
+    
+    &.out {
+        width:400px;
+    overflow-x:hidden;
+    }
+}
 
 section {
   overflow-x: hidden;

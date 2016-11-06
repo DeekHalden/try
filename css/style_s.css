@@ -1,6 +1,10 @@
 .hidd {
   display: none; }
 
+.main.out {
+  width: 400px;
+  overflow-x: hidden; }
+
 section {
   overflow-x: hidden; }
   section .image-wrapper .main {

@@ -20,30 +20,14 @@ section .container_accordion .panel-group .panel + .panel,
 }
 
 html {
-    min-height: 100%;
+    overflow-x: hidden;
+    width: 100%;
     /* make sure it is at least as tall as the viewport */
 }
 
 body {
     height: 100%;
     width: 100%;
-}
-
-.block {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    z-index: -1;
-    .btn {
-        position: fixed;
-        vertical-align: middle;
-        top: calc(50% - 10px);
-        left: calc(50% - 60.5px);
-        border-radius: 0;
-    }
 }
 
 section .container-fluid {
@@ -63,24 +47,28 @@ section .container-fluid {
     display: none;
 }
 
+
+/* .in {
+    margin-left: 0;
+}
+
+.out {
+    transition: .2s linear all;
+    margin-left: 150px;
+} */
+
 .navbar {
+    width: 100%;
     background-color: $nav-bg;
     border: none;
     border-radius: 0;
     .navbar-toggle {
         display: block !important;
-    }
-    .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background: linear-gradient(to right ,#413A32, #796946 );
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
+        .icon-bar {
+            background-color: #453C25;
+            width:30px;
+            height:3px;
+        }
     }
     .button-group {
         display: flex;
@@ -118,23 +106,9 @@ section .container-fluid {
     }
 }
 
-.side-collapse-container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-    transition: left .4s;
-    &.in {
-        left: 0;
-    }
-    &.out {
-        left: 200px;
-    }
-}
-
 section {
     /* map styles */
+    width: 100%;
     .container-fluid {
         position: relative;
         .image-wrapper .image-container .img-center {

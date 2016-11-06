@@ -15,27 +15,13 @@ section .container_accordion .panel-group .panel + .panel,
   margin: 0; }
 
 html {
-  min-height: 100%;
+  overflow-x: hidden;
+  width: 100%;
   /* make sure it is at least as tall as the viewport */ }
 
 body {
   height: 100%;
   width: 100%; }
-
-.block {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  z-index: -1; }
-  .block .btn {
-    position: fixed;
-    vertical-align: middle;
-    top: calc(50% - 10px);
-    left: calc(50% - 60.5px);
-    border-radius: 0; }
 
 section .container-fluid {
   padding: 0;
@@ -50,23 +36,25 @@ section .container-fluid {
 .display_none {
   display: none; }
 
+/* .in {
+    margin-left: 0;
+}
+
+.out {
+    transition: .2s linear all;
+    margin-left: 150px;
+} */
 .navbar {
+  width: 100%;
   background-color: #C8B485;
   border: none;
   border-radius: 0; }
   .navbar .navbar-toggle {
     display: block !important; }
-  .navbar .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to right, #413A32, #796946);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px; }
+    .navbar .navbar-toggle .icon-bar {
+      background-color: #453C25;
+      width: 30px;
+      height: 3px; }
   .navbar .button-group {
     display: flex;
     height: 55px;
@@ -95,20 +83,9 @@ section .container-fluid {
     .navbar .side-collapse.in {
       width: 0; }
 
-.side-collapse-container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  left: 0;
-  transition: left .4s; }
-  .side-collapse-container.in {
-    left: 0; }
-  .side-collapse-container.out {
-    left: 200px; }
-
 section {
-  /* map styles */ }
+  /* map styles */
+  width: 100%; }
   section .container-fluid {
     position: relative; }
     section .container-fluid .image-wrapper .image-container .img-center {
