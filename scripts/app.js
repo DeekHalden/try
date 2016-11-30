@@ -8,12 +8,12 @@
         angular.module('test', ['ui.router', 'GoogleMapsNative', 'ap.lateralSlideMenu', ])
             .config(function($urlRouterProvider, $stateProvider) {
 
-                $urlRouterProvider.otherwise('/');
+                $urlRouterProvider.otherwise('/overview');
 
 
                 $stateProvider
                     .state('app', {
-                        url: '/',
+                        url: '/overview',
                         views: {
                             'header': {
                                 templateUrl: 'views/partials/header.html',
@@ -31,17 +31,8 @@
                         }
 
                     })
-                    .state('app.overview', {
-                        url: 'overview',
-                        views: {
-                            'content@': {
-                                templateUrl: 'views/overview.html',
-                                controller: 'OverviewController as overview'
-                            }
-                        }
-
-                    })
-                    .state('app.overview.details', {
+                    
+                    .state('app.details', {
                         url: '/details',
                         views: {
                             'content@': {

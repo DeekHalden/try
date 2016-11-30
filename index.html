@@ -5,31 +5,31 @@
     <meta charset="UTF-8">
     <title>Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/theme-medium.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_s.css" media="screen and (max-width:991px)">
-    <link rel="stylesheet" href="bower_components/angular-input-stars-directive/angular-input-stars.css">
-    </script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components/angular-input-stars-directive/angular-input-stars.js"></script>
-    <script src="scripts/vendor/angular-google-maps-native.min.js"></script>
-    <script src="scripts/vendor/angular-ap-lateral-slide-menu.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/theme-medium.css">
+    <link rel="stylesheet" href="./css/angular-input-stars.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_s.css" media="screen and (max-width:991px)">
+    
+    <script src="./scripts/vendor/jquery.min.js"></script>
+    <script src="./scripts/vendor/bootstrap.min.js"></script>
+    <script src="./scripts/vendor/angular.min.js"></script>
+    <script src="./scripts/vendor/angular-ui-router.min.js"></script>
+    <script src="./scripts/vendor/angular-input-stars.js"></script>
+    <script src="./scripts/vendor/angular-google-maps-native.min.js"></script>
+    <script src="./scripts/vendor/angular-ap-lateral-slide-menu.min.js"></script>
 </head>
 
 <body lateral-slide-menu-controller>
-    <lateral-slide-menu ng-cloak>
+    <lateral-slide-menu>
         <ul>
-            <li><a href="#" class="selected">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Demo</a></li>
-            <li><a href="#">How to use</a></li>
-            <li><a href="#">Profil</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/" class="selected">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Demo</a></li>
+            <li><a href="/">How to use</a></li>
+            <li><a href="/">Profile</a></li>
+            <li><a href="/">Contact</a></li>
         </ul>
     </lateral-slide-menu>
     <div class="main-page lateral-slide-menu-main-page">
@@ -48,7 +48,7 @@
 <!-- <script src="scripts/services/overview.srv.js"></script> -->
 <!-- <script async defer src="httpss://maps.googleapis.com/maps/api/js?key=AIzaSyA5L7Z6WGpaYVB5ODvwpUhSQL_iZCqkdDE&callback=initMap"></script> -->
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyAW4oQDFJX04raLXEx-Kte0hoqGXJ-ZLuU
-&libraries=places,visualization,drawing,geometry,places"></script>
+&libraries=places,visualization,drawing,geometry,places" async defer></script>
 
 </script>
 
