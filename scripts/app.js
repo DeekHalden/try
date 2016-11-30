@@ -17,7 +17,7 @@
                         views: {
                             'header': {
                                 templateUrl: 'views/partials/header.html',
-                                // controller: 'NavController as nav'
+                                controller: 'NavController as nav'
                             },
                             'content': {
                                 templateUrl: 'views/overview.html',

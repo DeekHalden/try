@@ -4,6 +4,9 @@ var sass        = require('gulp-sass');
 var uncss 		= require('gulp-uncss');
 var concat = require('gulp-concat');
 var nano = require('gulp-cssnano');
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
+
 
 gulp.task('uncss', function () {
     return gulp.src('scss/**/*.scss')
@@ -30,7 +33,16 @@ gulp.task('serve', ['sass'], function() {
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
     return gulp.src("scss/*.scss")
+    	.pipe(plumber({errorHandler: function(err) {
+    		notify.onError({
+    			title:'Gulp error in ' + err.plugin,
+    			message: err.toString()
+    		})(err)
+
+    		
+    	}}))
         .pipe(sass())
+        
         .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());
 });

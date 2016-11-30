@@ -5,6 +5,17 @@
   width: 400px;
   overflow-x: hidden; }
 
+.navbar .navbar-toggle {
+  margin-right: 0; }
+
+.navbar .button-group {
+  width: auto;
+  display: flex;
+  vertical-align: bottom; }
+  .navbar .button-group a {
+    width: 120px;
+    flex: 50; }
+
 section {
   overflow-x: hidden; }
   section .image-wrapper .main {
@@ -31,19 +42,25 @@ section {
     padding-bottom: 1em; }
     section .container_accordion .panel-group .timeline li gm-map {
       height: 20em; }
-    section .container_accordion .panel-group .timeline li .timeline-badge, section .container_accordion .panel-group .timeline li .badge-right, section .container_accordion .panel-group .timeline li .badge-left {
+    section .container_accordion .panel-group .timeline li .timeline-badge,
+    section .container_accordion .panel-group .timeline li .badge-right,
+    section .container_accordion .panel-group .timeline li .badge-left {
       left: -25% !important;
       right: auto;
       background-color: #F6F5E7;
       z-index: 1; }
-    section .container_accordion .panel-group .timeline li .timeline-badge:before, section .container_accordion .panel-group .timeline li .badge-right:before, section .container_accordion .panel-group .timeline li .badge-left:before {
+    section .container_accordion .panel-group .timeline li .timeline-badge:before,
+    section .container_accordion .panel-group .timeline li .badge-right:before,
+    section .container_accordion .panel-group .timeline li .badge-left:before {
       content: '';
       left: 49%;
       top: 95%;
       width: 1px;
       border-bottom: 30em solid #A29948;
       z-index: 0; }
-    section .container_accordion .panel-group .timeline li .timeline-badge:after, section .container_accordion .panel-group .timeline li .badge-right:after, section .container_accordion .panel-group .timeline li .badge-left:after {
+    section .container_accordion .panel-group .timeline li .timeline-badge:after,
+    section .container_accordion .panel-group .timeline li .badge-right:after,
+    section .container_accordion .panel-group .timeline li .badge-left:after {
       left: 49%;
       bottom: 95%;
       width: 1px;
@@ -56,7 +73,8 @@ section {
         width: 100%; }
       section .container_accordion .panel-group .timeline li .card .card-block {
         height: 5em; }
-  section .container_accordion .panel-group .timeline .none-before .timeline-badge:after, section .container_accordion .panel-group .timeline .none-after .timeline-badge:before {
+  section .container_accordion .panel-group .timeline .none-before .timeline-badge:after,
+  section .container_accordion .panel-group .timeline .none-after .timeline-badge:before {
     border: none; }
 
 @media (max-width: 800px) {
@@ -79,4 +97,4 @@ section {
   section .container_accordion .panel-group .timeline li .timeline-badge:before {
     border-bottom: 15em solid #A29948; }
   section .expert-window {
-    padding-left: 3em; } }
+    padding-left: 28%; } }

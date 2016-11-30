@@ -11,20 +11,19 @@
 .no-boxing,
 section .container_accordion .panel-group .panel + .panel,
 .row {
-  padding: 0;
   margin: 0; }
 
 html {
-  overflow-x: hidden;
   width: 100%;
   /* make sure it is at least as tall as the viewport */ }
 
 body {
+  overflow-x: hidden;
   height: 100%;
   width: 100%; }
 
 section .container-fluid {
-  padding: 0;
+  padding: 50px 0 0;
   margin: 0; }
   section .container-fluid .image-wrapper {
     padding: 0;
@@ -50,6 +49,7 @@ section .container-fluid {
   border: none;
   border-radius: 0; }
   .navbar .navbar-toggle {
+    margin-right: 0;
     display: block !important; }
     .navbar .navbar-toggle .icon-bar {
       background-color: #453C25;
@@ -58,12 +58,14 @@ section .container-fluid {
   .navbar .button-group {
     display: flex;
     height: 55px;
+    width: 400px;
     vertical-align: bottom; }
     .navbar .button-group a {
       flex: 50;
       color: #453C25;
       font-size: 18px;
-      text-decoration: none; }
+      text-decoration: none;
+      padding-top: 14px; }
       .navbar .button-group a.active {
         font-weight: 600;
         background-color: #D2C29B; }
@@ -115,7 +117,8 @@ section {
     section .expert p {
       color: #3D380A;
       font-size: 18px;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      text-align: justify; }
     section .expert .clear-rating,
     section .expert .caption {
       display: none !important; }
@@ -309,95 +312,92 @@ section {
       border-radius: 5px;
       box-shadow: 0 2px 2px #dfc40a; }
 
-.carousel section {
-  overflow-y: hidden;
+.carousel {
   background-color: #FAFAF2; }
-  .carousel section .details_button_wrapper {
-    min-height: 40px;
-    min-width: 30px;
-    max-width: 50px;
-    position: absolute;
-    right: 0;
-    top: 1em;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-color: #FFDF06;
-    box-shadow: 2px 1px 1px 1px #DFC40A; }
-    .carousel section .details_button_wrapper .details_button i {
-      font-size: 24px;
-      color: #443B25;
-      font-weight: 800;
+  .carousel section {
+    overflow-y: hidden; }
+    .carousel section .details_button_wrapper {
+      min-height: 40px;
+      min-width: 30px;
+      max-width: 50px;
       position: absolute;
-      top: calc(50% - 12px);
-      left: calc(50% - 3px); }
-  .carousel section input[type="text"] {
-    width: 100px;
-    min-height: 40px;
-    background-color: #FFDF06;
-    border-radius: 5px;
-    border: none;
-    margin: 1em; }
-  .carousel section ::-webkit-input-placeholder,
-  .carousel section :-moz-placeholder,
-  .carousel section ::-moz-placeholder,
-  .carousel section :-ms-input-placeholder {
-    color: #4A4024;
-    text-align: center;
-    font-weight: 100;
-    padding: 1em; }
-  .carousel section .card {
-    border: 1px solid white;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-    position: relative;
-    margin-bottom: 4em; }
-    .carousel section .card a {
-      color: #453C25;
-      background-color: white; }
-    .carousel section .card h4 {
-      padding-left: 1.5em;
-      padding-bottom: 10px;
-      font-weight: 600; }
-    .carousel section .card .card-header p {
-      padding-left: 2em; }
-    .carousel section .card .row div:last-child {
-      position: absolute;
+      right: 0;
       top: 1em;
-      right: 1em;
-      font-weight: 100; }
-    .carousel section .card .icon {
-      height: 32px;
-      display: block;
-      float: left; }
-  .carousel section .card-block {
-    color: #524E2A; }
-  .carousel section .card .timeline-badge {
-    width: 30px;
-    height: 30px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-color: #FFDF06;
+      box-shadow: 2px 1px 1px 1px #DFC40A; }
+      .carousel section .details_button_wrapper .details_button i {
+        font-size: 24px;
+        color: #443B25;
+        font-weight: 800;
+        position: absolute;
+        top: calc(50% - 12px);
+        left: calc(50% - 3px); }
+    .carousel section input[type="text"] {
+      width: 100px;
+      min-height: 40px;
+      background-color: #FFDF06;
+      border-radius: 5px;
+      border: none;
+      margin: 1em; }
+    .carousel section ::-webkit-input-placeholder,
+    .carousel section :-moz-placeholder,
+    .carousel section ::-moz-placeholder,
+    .carousel section :-ms-input-placeholder {
+      color: #4A4024;
+      text-align: center;
+      font-weight: 100;
+      padding: 1em; }
+    .carousel section .card {
+      border: 1px solid white;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+      position: relative;
+      margin-bottom: 4em; }
+      .carousel section .card a {
+        color: #453C25;
+        background-color: white; }
+      .carousel section .card h4 {
+        padding-left: 1.5em;
+        padding-bottom: 10px;
+        font-weight: 600; }
+      .carousel section .card .card-header p {
+        padding-left: 2em; }
+      .carousel section .card .row div:last-child {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        font-weight: 100; }
+      .carousel section .card .icon {
+        height: 32px;
+        display: block;
+        float: left; }
+    .carousel section .card-block {
+      color: #524E2A; }
+    .carousel section .card .timeline-badge {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 1em;
+      bottom: -3.2em;
+      border: 2px solid #FFDF06;
+      border-radius: 50%;
+      padding-left: 5px;
+      padding-top: 3px;
+      background-color: white; }
+  .carousel div.vertical-line {
     position: absolute;
-    left: 1em;
-    bottom: -3.2em;
-    border: 2px solid #FFDF06;
-    border-radius: 50%;
-    padding-left: 5px;
-    padding-top: 3px;
-    background-color: white; }
-
-.carousel div.vertical-line {
-  position: absolute;
-  width: 2px;
-  left: 50%;
-  background-color: #FFDF06; }
-
-.carousel div.vertical-line-before {
-  top: -15px; }
-
-.carousel div.vertical-line-after {
-  bottom: -15px; }
+    width: 2px;
+    left: 50%;
+    background-color: #FFDF06; }
+  .carousel div.vertical-line-before {
+    top: -15px; }
+  .carousel div.vertical-line-after {
+    bottom: -15px; }
 
 footer {
-  margin-top: 4em;
   background-color: #453C25; }
   footer ul {
     padding-top: 1em !important; }

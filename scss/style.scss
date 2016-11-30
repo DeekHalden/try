@@ -1,5 +1,7 @@
 $nav-bg:#C8B485;
+
 .text-muted {
+
     color: #777777;
 }
 
@@ -15,23 +17,23 @@ $nav-bg:#C8B485;
 .no-boxing,
 section .container_accordion .panel-group .panel + .panel,
 .row {
-    padding: 0;
-    margin: 0;
+        margin: 0;
 }
 
 html {
-    overflow-x: hidden;
+    
     width: 100%;
     /* make sure it is at least as tall as the viewport */
 }
 
 body {
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
 }
 
 section .container-fluid {
-    padding: 0;
+    padding:50px 0 0;
     margin: 0;
     .image-wrapper {
         padding: 0;
@@ -63,22 +65,27 @@ section .container-fluid {
     border: none;
     border-radius: 0;
     .navbar-toggle {
+        margin-right:0;
         display: block !important;
         .icon-bar {
             background-color: #453C25;
             width:30px;
             height:3px;
         }
+        
     }
+
     .button-group {
         display: flex;
         height: 55px;
+        width:400px;
         vertical-align: bottom;
         a {
             flex: 50;
             color: #453C25;
             font-size: 18px;
             text-decoration: none;
+            padding-top:14px;
             &.active {
                 font-weight: 600;
                 background-color: #D2C29B;
@@ -146,6 +153,7 @@ section {
             color: #3D380A;
             font-size: 18px;
             margin-bottom: 0;
+            text-align: justify;
         }
         .clear-rating,
         .caption {
@@ -393,9 +401,11 @@ section {
 }
 
 .carousel {
+    
+    background-color: #FAFAF2; 
     section {
         overflow-y: hidden;
-        background-color: #FAFAF2;
+        
         .details_button_wrapper {
             min-height: 40px;
             min-width: 30px;
@@ -497,7 +507,7 @@ section {
 }
 
 footer {
-    margin-top: 4em;
+    
     background-color: #453C25;
     ul {
         padding-top: 1em !important;
